@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" interfaceStyle="dark" id="iN0-l3-epB" customClass="WatchCell" customModule="WatchFaces" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="268" height="432"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_applewatch" translatesAutoresizingMaskIntoConstraints="NO" id="cLa-1O-Cdn">
+                    <rect key="frame" x="0.0" y="0.0" width="268" height="432"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="cLa-1O-Cdn" secondAttribute="height" multiplier="67:108" id="bxb-en-m7W"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallpaper" translatesAutoresizingMaskIntoConstraints="NO" id="4Aq-oh-cA3">
+                    <rect key="frame" x="16" y="75" width="225" height="261"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="30"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="4Aq-oh-cA3" firstAttribute="top" secondItem="cLa-1O-Cdn" secondAttribute="top" constant="75" id="0hc-6e-jtx"/>
+                <constraint firstItem="cLa-1O-Cdn" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="OZd-Q0-oqF"/>
+                <constraint firstItem="4Aq-oh-cA3" firstAttribute="leading" secondItem="cLa-1O-Cdn" secondAttribute="leading" constant="16" id="Tuy-iW-s54"/>
+                <constraint firstItem="4Aq-oh-cA3" firstAttribute="bottom" secondItem="cLa-1O-Cdn" secondAttribute="bottom" constant="-96" id="WWE-8y-wtG"/>
+                <constraint firstAttribute="trailing" secondItem="cLa-1O-Cdn" secondAttribute="trailing" id="XXx-Wh-VVD"/>
+                <constraint firstItem="4Aq-oh-cA3" firstAttribute="trailing" secondItem="cLa-1O-Cdn" secondAttribute="trailing" constant="-27" id="eav-vM-iXv"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="cLa-1O-Cdn" secondAttribute="bottom" id="msQ-jD-yzA"/>
+                <constraint firstItem="cLa-1O-Cdn" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="swN-wj-Vj8"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="bottomImageContraint" destination="WWE-8y-wtG" id="ico-jp-EUo"/>
+                <outlet property="leftImageContraint" destination="Tuy-iW-s54" id="GJl-1a-mO2"/>
+                <outlet property="rightImageContraint" destination="eav-vM-iXv" id="ayL-1N-Jde"/>
+                <outlet property="topImageContraint" destination="0hc-6e-jtx" id="78n-Y9-kxi"/>
+                <outlet property="wallpaperImage" destination="4Aq-oh-cA3" id="abx-q2-gAG"/>
+                <outlet property="watchImage" destination="cLa-1O-Cdn" id="iAz-b0-c1S"/>
+            </connections>
+            <point key="canvasLocation" x="68.115942028985515" y="-5.3571428571428568"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="image_applewatch" width="268" height="432"/>
+        <image name="wallpaper" width="208" height="256"/>
+    </resources>
+</document>
