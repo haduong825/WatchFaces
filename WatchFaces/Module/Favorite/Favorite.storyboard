@@ -17,29 +17,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EFn-w3-R7s">
-                                <rect key="frame" x="0.0" y="44" width="320" height="368.5"/>
+                                <rect key="frame" x="0.0" y="94" width="320" height="368.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="EFn-w3-R7s" secondAttribute="height" multiplier="375:432" id="El4-J3-mFX"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2qG-eu-pHp">
+                                <rect key="frame" x="0.0" y="44" width="320" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1Pp-03-fa1"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="2qG-eu-pHp" firstAttribute="leading" secondItem="R0p-8g-hEA" secondAttribute="leading" id="0XX-64-jwO"/>
                             <constraint firstItem="R0p-8g-hEA" firstAttribute="trailing" secondItem="EFn-w3-R7s" secondAttribute="trailing" id="5Np-E4-ags"/>
+                            <constraint firstItem="2qG-eu-pHp" firstAttribute="top" secondItem="R0p-8g-hEA" secondAttribute="top" id="JyU-e5-eOL"/>
                             <constraint firstItem="EFn-w3-R7s" firstAttribute="leading" secondItem="R0p-8g-hEA" secondAttribute="leading" id="PQY-bZ-dMa"/>
-                            <constraint firstItem="EFn-w3-R7s" firstAttribute="top" secondItem="R0p-8g-hEA" secondAttribute="top" id="STz-qB-30n"/>
+                            <constraint firstItem="EFn-w3-R7s" firstAttribute="top" secondItem="2qG-eu-pHp" secondAttribute="bottom" id="dbD-Rf-hqK"/>
+                            <constraint firstItem="R0p-8g-hEA" firstAttribute="trailing" secondItem="2qG-eu-pHp" secondAttribute="trailing" id="u3n-Vl-VCc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="R0p-8g-hEA"/>
                     </view>
                     <navigationItem key="navigationItem" title="Your Favorite" id="dVw-PJ-2bH"/>
                     <connections>
                         <outlet property="pagerView" destination="EFn-w3-R7s" id="Qnb-wA-a5e"/>
+                        <outlet property="underTopContainerView" destination="2qG-eu-pHp" id="EIe-1O-CSD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V0M-e2-7NH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1376.8115942028987" y="-268.52678571428572"/>
+            <point key="canvasLocation" x="1376.25" y="-269.36619718309862"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1Nm-vJ-Op8">

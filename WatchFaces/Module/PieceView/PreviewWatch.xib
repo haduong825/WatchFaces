@@ -14,16 +14,45 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="572"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aIA-6v-AEP" customClass="FSPagerView" customModule="FSPagerView">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="572"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aIA-6v-AEP" customClass="FSPagerView" customModule="WatchFaces" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="aIA-6v-AEP" secondAttribute="height" id="7C3-Km-lUc"/>
+                    </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SK1-mn-VMj">
+                    <rect key="frame" x="72.5" y="414" width="269" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="dhG-U2-HfP"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="Choose">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="25"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="1.5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="chooseAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="oG6-zb-whR"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="aIA-6v-AEP" secondAttribute="bottom" id="G5J-Zk-wpc"/>
+                <constraint firstItem="SK1-mn-VMj" firstAttribute="width" secondItem="aIA-6v-AEP" secondAttribute="width" multiplier="0.65" id="7H7-6y-wDw"/>
                 <constraint firstItem="aIA-6v-AEP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Uuy-AE-2sz"/>
                 <constraint firstItem="aIA-6v-AEP" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="W7B-Qw-0Bc"/>
+                <constraint firstItem="SK1-mn-VMj" firstAttribute="top" secondItem="aIA-6v-AEP" secondAttribute="bottom" id="cw0-AF-qYK"/>
+                <constraint firstItem="SK1-mn-VMj" firstAttribute="centerX" secondItem="aIA-6v-AEP" secondAttribute="centerX" id="s5e-PN-uWm"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="aIA-6v-AEP" secondAttribute="trailing" id="w9O-ex-IeN"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

@@ -7,13 +7,19 @@
 //
 
 import UIKit
-import FSPagerView
+
+protocol PreviewWatchDelegate {
+    func chooseFace(face: Face)
+}
 
 class PreviewWatch: UIView {
 
     @IBOutlet weak var pagerView: FSPagerView!
     
     private let kCell = "watchCell"
+    
+    var arrWatch = [Face]()
+    var delegate: PreviewWatchDelegate?
     
     class func createView() -> PreviewWatch{
         let views = Bundle.main.loadNibNamed("PreviewWatch", owner: self, options: nil)
@@ -30,21 +36,33 @@ class PreviewWatch: UIView {
         pagerView.dataSource = self
         pagerView.delegate = self
     }
+    
+    func setupDataSource(faces: [Face]){
+        arrWatch = faces
+        pagerView.reloadData()
+    }
+    
+    
+    @IBAction func chooseAction(_ sender: Any) {
+        delegate?.chooseFace(face: arrWatch[pagerView.currentIndex])
+    }
 }
 
 
 extension PreviewWatch: FSPagerViewDataSource, FSPagerViewDelegate{
     func numberOfItems(in pagerView: FSPagerView) -> Int {
-        return 10
+        return arrWatch.count == 0 ? 1 : arrWatch.count
     }
     
     func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
         let cell = pagerView.dequeueReusableCell(withReuseIdentifier: kCell, at: index) as! WatchCell
+        cell.positionText = index
+        cell.totalText = arrWatch.count
+        if arrWatch.count > 0{
+            cell.face = arrWatch[index]
+        }
         cell.setupUI()
         return cell
     }
-    
-    
-    
     
 }

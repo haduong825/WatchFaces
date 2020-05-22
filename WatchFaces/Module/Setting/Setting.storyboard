@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lph-ow-ZnB">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -13,9 +13,34 @@
             <objects>
                 <viewController storyboardIdentifier="SettingViewController" id="GM9-5D-VL1" customClass="SettingViewController" customModule="WatchFaces" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cAa-vt-r7H">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZqZ-wQ-SOq" customClass="GradientView" customModule="WatchFaces" customModuleProvider="target">
+                                <rect key="frame" x="20" y="94" width="280" height="424"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                        <color key="value" red="0.14184777854662867" green="0.14184777854662867" blue="0.14184777854662867" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                        <color key="value" red="0.23710475824206012" green="0.23710475824206012" blue="0.23710475824206012" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="horizontalMode" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="diagonalMode" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ZqZ-wQ-SOq" firstAttribute="leading" secondItem="Hqu-Ji-ETJ" secondAttribute="leading" constant="20" id="70q-V8-3Hy"/>
+                            <constraint firstItem="ZqZ-wQ-SOq" firstAttribute="top" secondItem="Hqu-Ji-ETJ" secondAttribute="top" constant="50" id="ZCu-ea-qi3"/>
+                            <constraint firstItem="Hqu-Ji-ETJ" firstAttribute="trailing" secondItem="ZqZ-wQ-SOq" secondAttribute="trailing" constant="20" id="bMm-J8-EuB"/>
+                            <constraint firstItem="Hqu-Ji-ETJ" firstAttribute="bottom" secondItem="ZqZ-wQ-SOq" secondAttribute="bottom" constant="50" id="hcE-mW-lna"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Hqu-Ji-ETJ"/>
                     </view>
                     <navigationItem key="navigationItem" title="Setting" id="mXY-Wg-fHQ"/>
@@ -30,7 +55,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lph-ow-ZnB" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PhK-Vg-wWc">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

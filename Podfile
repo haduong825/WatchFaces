@@ -6,6 +6,7 @@ target 'WatchFaces' do
   use_frameworks!
 
   # Pods for WatchFaces
-  pod 'FSPagerView'
+  pod 'SDWebImage', '~> 5.0'
+  pod 'RealmSwift'
 
 end

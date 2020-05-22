@@ -16,6 +16,7 @@
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Tr8-hn-DGB">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="550"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="15" minimumInteritemSpacing="15" id="5au-nD-Yd9">
                         <size key="itemSize" width="128" height="128"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -24,12 +25,12 @@
                     </collectionViewFlowLayout>
                 </collectionView>
             </subviews>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="Tr8-hn-DGB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="GY4-tI-Q3k"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Tr8-hn-DGB" secondAttribute="trailing" id="NVi-TJ-xqA"/>
                 <constraint firstItem="Tr8-hn-DGB" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="WfY-jG-nxK"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Tr8-hn-DGB" secondAttribute="bottom" id="bzX-zZ-cfq"/>
+                <constraint firstItem="Tr8-hn-DGB" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="fBl-wZ-s7t"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

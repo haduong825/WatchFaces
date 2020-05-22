@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import SDWebImage
 
 class GridWallpaper: UIView {
     
     @IBOutlet weak var wallpaperCollectionView: UICollectionView!
     
     private let kWallpaperCell = "WallpaperCell"
+    var arrWatch = [Face]()
     
     class func createView() -> GridWallpaper{
         let views = Bundle.main.loadNibNamed("GridWallpaper", owner: self, options: nil)
@@ -28,17 +30,23 @@ class GridWallpaper: UIView {
         wallpaperCollectionView.delegate = self
     }
     
-    
+    func setupDataSource(faces: [Face]){
+        arrWatch = faces
+        wallpaperCollectionView.reloadData()
+    }
 }
 
 
 extension GridWallpaper: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return arrWatch.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kWallpaperCell, for: indexPath) as! WallpaperCollectionViewCell
+        let imageUrl = Constants.baseUrl + EndPoint.watch + arrWatch[indexPath.row].url
+        cell.wallpaperImageView.sd_imageIndicator = SDWebImageActivityIndicator.whiteLarge
+        cell.wallpaperImageView.sd_setImage(with: URL(string: imageUrl), completed: nil)
         return cell
     }
     
@@ -48,11 +56,4 @@ extension GridWallpaper: UICollectionViewDelegate, UICollectionViewDataSource, U
         return CGSize(width: width, height: height)
     }
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//        return 20
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-//        return 20
-//    }
 }

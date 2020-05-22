@@ -11,4 +11,5 @@ import UIKit
 class WallpaperCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var wallpaperImageView: UIImageView!
     
+    
 }

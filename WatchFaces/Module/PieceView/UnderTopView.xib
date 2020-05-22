@@ -15,13 +15,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_get_premium" translatesAutoresizingMaskIntoConstraints="NO" id="juf-0R-aY7">
-                    <rect key="frame" x="10" y="0.0" width="50" height="50"/>
+                    <rect key="frame" x="10" y="7" width="36" height="36"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="juf-0R-aY7" secondAttribute="height" id="Lf0-ug-9Vs"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get Premium!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VGD-Yk-c8c">
-                    <rect key="frame" x="70" y="14.5" width="105" height="21"/>
+                    <rect key="frame" x="56" y="14.5" width="105" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -47,7 +47,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PLq-Iy-Nzt">
-                    <rect key="frame" x="0.0" y="0.0" width="175" height="50"/>
+                    <rect key="frame" x="0.0" y="0.0" width="161" height="50"/>
                     <connections>
                         <action selector="getPremiumAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="lmM-Rt-th7"/>
                     </connections>
@@ -60,7 +60,7 @@
                 <constraint firstItem="PLq-Iy-Nzt" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="7OG-3i-dAJ"/>
                 <constraint firstItem="PLq-Iy-Nzt" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="BVW-v7-gTE"/>
                 <constraint firstItem="VGD-Yk-c8c" firstAttribute="leading" secondItem="juf-0R-aY7" secondAttribute="trailing" constant="10" id="IlC-Me-iYL"/>
-                <constraint firstItem="juf-0R-aY7" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Ne6-5B-skx"/>
+                <constraint firstItem="juf-0R-aY7" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="7" id="Ne6-5B-skx"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Pmj-id-OfX" secondAttribute="bottom" constant="10" id="bFi-0l-ktn"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="MUx-kj-Xw6" secondAttribute="trailing" constant="10" id="cmS-Lc-JIO"/>
                 <constraint firstItem="PLq-Iy-Nzt" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="f4c-Do-tLH"/>
@@ -68,11 +68,15 @@
                 <constraint firstItem="PLq-Iy-Nzt" firstAttribute="trailing" secondItem="VGD-Yk-c8c" secondAttribute="trailing" id="gjl-Tn-C3U"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="MUx-kj-Xw6" secondAttribute="bottom" constant="10" id="klm-jo-6xs"/>
                 <constraint firstItem="juf-0R-aY7" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="lT5-dr-LOJ"/>
-                <constraint firstItem="juf-0R-aY7" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="uaf-Qs-tE7"/>
+                <constraint firstItem="juf-0R-aY7" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" constant="-7" id="uaf-Qs-tE7"/>
                 <constraint firstItem="VGD-Yk-c8c" firstAttribute="centerY" secondItem="juf-0R-aY7" secondAttribute="centerY" id="yEY-cI-aJn"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="gridButton" destination="Pmj-id-OfX" id="Ne1-jg-SSJ"/>
+                <outlet property="previewButton" destination="MUx-kj-Xw6" id="rlg-wp-u6h"/>
+            </connections>
             <point key="canvasLocation" x="131.25" y="-152.11267605633802"/>
         </view>
     </objects>

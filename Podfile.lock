@@ -1,16 +1,28 @@
 PODS:
-  - FSPagerView (0.8.3)
+  - Realm (5.0.0):
+    - Realm/Headers (= 5.0.0)
+  - Realm/Headers (5.0.0)
+  - RealmSwift (5.0.0):
+    - Realm (= 5.0.0)
+  - SDWebImage (5.8.0):
+    - SDWebImage/Core (= 5.8.0)
+  - SDWebImage/Core (5.8.0)
 
 DEPENDENCIES:
-  - FSPagerView
+  - RealmSwift
+  - SDWebImage (~> 5.0)
 
 SPEC REPOS:
   trunk:
-    - FSPagerView
+    - Realm
+    - RealmSwift
+    - SDWebImage
 
 SPEC CHECKSUMS:
-  FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
+  Realm: 76066d333de26f97e9caedaa85ee3ff4a62ca265
+  RealmSwift: c1bdff09b422569dc6881410d9ccf712bcdb79b0
+  SDWebImage: 84000f962cbfa70c07f19d2234cbfcf5d779b5dc
 
-PODFILE CHECKSUM: 418cfd80aceb2c1467072e281e5964b040e13d3b
+PODFILE CHECKSUM: 701681d4281d9238406fb169b75b5973f73bcc39
 
 COCOAPODS: 1.8.4
