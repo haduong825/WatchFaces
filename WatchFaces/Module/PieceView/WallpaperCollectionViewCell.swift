@@ -46,7 +46,6 @@ class WallpaperCollectionViewCell: UICollectionViewCell {
         } else {
             freeView.isHidden = false
         }
-        self.freeView.isHidden = false
         self.likeButton.isHidden = false
         if face.isLiked{
             likeButton.setImage(#imageLiteral(resourceName: "red-heart"), for: .normal)

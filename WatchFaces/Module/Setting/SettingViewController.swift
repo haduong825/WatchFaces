@@ -11,11 +11,22 @@ import UIKit
 class SettingViewController: UIViewController, StoryboardInstantiable {
     
     static var storyboardName: String = "Setting"
+    @IBOutlet weak var getPremiumAction: GradientView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setupUI()
     }
 
+    func setupUI(){
+        getPremiumAction.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showPremium)))
+    }
+    
+    @objc func showPremium(){
+        let vc = PremiumViewController.instantiate()
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: true, completion: nil)
+    }
+    
 }
