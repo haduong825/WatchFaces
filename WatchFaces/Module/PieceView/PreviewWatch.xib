@@ -16,7 +16,7 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aIA-6v-AEP" customClass="FSPagerView" customModule="WatchFaces" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="aIA-6v-AEP" secondAttribute="height" id="7C3-Km-lUc"/>
                     </constraints>
@@ -46,7 +46,7 @@
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="SK1-mn-VMj" firstAttribute="width" secondItem="aIA-6v-AEP" secondAttribute="width" multiplier="0.65" id="7H7-6y-wDw"/>
                 <constraint firstItem="aIA-6v-AEP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Uuy-AE-2sz"/>

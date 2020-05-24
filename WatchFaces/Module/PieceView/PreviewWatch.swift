@@ -46,6 +46,15 @@ class PreviewWatch: UIView {
     @IBAction func chooseAction(_ sender: Any) {
         delegate?.chooseFace(face: arrWatch[pagerView.currentIndex])
     }
+    
+    override func layoutSubviews() {
+        if arrWatch.count > 1{
+            print(pagerView.currentIndex)
+            if arrWatch[pagerView.currentIndex].paid {
+                
+            }
+        }
+    }
 }
 
 
@@ -64,5 +73,6 @@ extension PreviewWatch: FSPagerViewDataSource, FSPagerViewDelegate{
         cell.setupUI()
         return cell
     }
+    
     
 }

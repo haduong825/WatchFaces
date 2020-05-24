@@ -9,12 +9,17 @@
 import UIKit
 import SDWebImage
 
+protocol GridWallpaperDelegate {
+    func didSelect(at face: Face)
+}
+
 class GridWallpaper: UIView {
     
     @IBOutlet weak var wallpaperCollectionView: UICollectionView!
     
     private let kWallpaperCell = "WallpaperCell"
     var arrWatch = [Face]()
+    var delegate: GridWallpaperDelegate?
     
     class func createView() -> GridWallpaper{
         let views = Bundle.main.loadNibNamed("GridWallpaper", owner: self, options: nil)
@@ -44,9 +49,8 @@ extension GridWallpaper: UICollectionViewDelegate, UICollectionViewDataSource, U
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kWallpaperCell, for: indexPath) as! WallpaperCollectionViewCell
-        let imageUrl = Constants.baseUrl + EndPoint.watch + arrWatch[indexPath.row].url
-        cell.wallpaperImageView.sd_imageIndicator = SDWebImageActivityIndicator.whiteLarge
-        cell.wallpaperImageView.sd_setImage(with: URL(string: imageUrl), completed: nil)
+        cell.face = arrWatch[indexPath.row]
+        cell.setupUI()
         return cell
     }
     
@@ -54,6 +58,11 @@ extension GridWallpaper: UICollectionViewDelegate, UICollectionViewDataSource, U
         let width = (UIScreen.main.bounds.width - 45) / 2
         let height = width * 201 / 163
         return CGSize(width: width, height: height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.didSelect(at: arrWatch[indexPath.row])
+        collectionView.deselectItem(at: indexPath, animated: true)
     }
     
 }

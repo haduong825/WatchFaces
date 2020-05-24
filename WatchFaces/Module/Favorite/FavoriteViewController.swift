@@ -21,10 +21,14 @@ class FavoriteViewController: UIViewController, StoryboardInstantiable {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        listWatchView.delegate = self
+        listWatchView.previewWatch.delegate = self
+        listWatchView.gridWallpaper.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = false
         fetchData()
     }
     
@@ -34,24 +38,53 @@ class FavoriteViewController: UIViewController, StoryboardInstantiable {
     }
     
     private func fetchData(){
-        let faces = Array(realm.objects(Face.self))
+        let predicate = NSPredicate(format: "isLiked = true")
+        let faces = Array(realm.objects(Face.self).filter(predicate))
         self.listWatchView.previewWatch.setupDataSource(faces: faces)
         self.listWatchView.gridWallpaper.setupDataSource(faces: faces)
     }
     
-}
-
-
-extension FavoriteViewController: WatchCellProtocol{
-    func updateData() {
-        fetchData()
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        let predicate = NSPredicate(format: "isLiked = false")
+        let facesDelete = Array(realm.objects(Face.self).filter(predicate))
+        
+        if facesDelete.count > 0 {
+            try! realm.write {
+                realm.delete(facesDelete)
+            }
+        }
     }
+    
+    func directToPreview(face: Face){
+        let vc = PreviewViewController.instantiate()
+        vc.face = face
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
+    }
+    
 }
 
 extension FavoriteViewController: PreviewWatchDelegate{
     func chooseFace(face: Face) {
-        let vc = PreviewViewController.instantiate()
-        self.present(vc, animated: true, completion: nil)
+        
+        directToPreview(face: face)
     }
     
+}
+
+extension FavoriteViewController: GridWallpaperDelegate{
+    
+    func didSelect(at face: Face) {
+        directToPreview(face: face)
+    }
+}
+
+extension FavoriteViewController: ListWatchViewDelegate{
+    func getPremiumAction() {
+        let vc = PremiumViewController.instantiate()
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
+    }
 }

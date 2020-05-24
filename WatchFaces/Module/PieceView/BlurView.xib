@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BlurView" customModule="WatchFaces" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qMr-pX-gKS">
+                    <rect key="frame" x="30" y="0.0" width="354" height="60"/>
+                    <subviews>
+                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Xma-Ng-xPb">
+                            <rect key="frame" x="28" y="15" width="298" height="31"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="blurChanged:" destination="iN0-l3-epB" eventType="valueChanged" id="ZeS-Sl-rxV"/>
+                            </connections>
+                        </slider>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="Xma-Ng-xPb" firstAttribute="centerY" secondItem="qMr-pX-gKS" secondAttribute="centerY" id="YwB-nU-QBF"/>
+                        <constraint firstAttribute="height" constant="60" id="efh-Nj-Xqq"/>
+                        <constraint firstAttribute="trailing" secondItem="Xma-Ng-xPb" secondAttribute="trailing" constant="30" id="vhl-c9-tDo"/>
+                        <constraint firstItem="Xma-Ng-xPb" firstAttribute="leading" secondItem="qMr-pX-gKS" secondAttribute="leading" constant="30" id="wE1-sm-Cfu"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="30"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PKA-0Y-coA">
+                    <rect key="frame" x="20" y="70" width="54.5" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="PKA-0Y-coA" secondAttribute="height" multiplier="10:11" id="3S7-MQ-ymf"/>
+                    </constraints>
+                    <state key="normal" image="ic_close"/>
+                    <connections>
+                        <action selector="closeAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="ogc-op-6TW"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pph-uh-4XL">
+                    <rect key="frame" x="339.5" y="70" width="54.5" height="60"/>
+                    <state key="normal" image="ic_tick"/>
+                    <connections>
+                        <action selector="doneAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="UZu-l3-nzf"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K3E-1H-WNa">
+                    <rect key="frame" x="177.5" y="86.5" width="59.5" height="27"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_blur" translatesAutoresizingMaskIntoConstraints="NO" id="pmF-lM-nRU">
+                            <rect key="frame" x="0.0" y="0.0" width="19" height="27"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="19" id="4mV-88-WRi"/>
+                                <constraint firstAttribute="height" constant="27" id="hod-06-h3W"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blur" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6S-wH-4Vy">
+                            <rect key="frame" x="29" y="3.5" width="30.5" height="20"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="pmF-lM-nRU" firstAttribute="leading" secondItem="K3E-1H-WNa" secondAttribute="leading" id="7bu-v9-p6d"/>
+                        <constraint firstAttribute="trailing" secondItem="h6S-wH-4Vy" secondAttribute="trailing" id="Brr-We-y7Q"/>
+                        <constraint firstItem="pmF-lM-nRU" firstAttribute="top" secondItem="K3E-1H-WNa" secondAttribute="top" id="DnH-QS-hkp"/>
+                        <constraint firstAttribute="bottom" secondItem="pmF-lM-nRU" secondAttribute="bottom" id="Ef2-Xs-Kfz"/>
+                        <constraint firstItem="h6S-wH-4Vy" firstAttribute="centerY" secondItem="pmF-lM-nRU" secondAttribute="centerY" id="WfE-GU-gsd"/>
+                        <constraint firstItem="h6S-wH-4Vy" firstAttribute="leading" secondItem="pmF-lM-nRU" secondAttribute="trailing" constant="10" id="trA-Pn-vSh"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Pph-uh-4XL" secondAttribute="trailing" constant="20" id="1uo-9A-Ewi"/>
+                <constraint firstItem="Pph-uh-4XL" firstAttribute="height" secondItem="PKA-0Y-coA" secondAttribute="height" id="4qt-vk-3YG"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="qMr-pX-gKS" secondAttribute="trailing" constant="30" id="94q-GV-eS3"/>
+                <constraint firstItem="K3E-1H-WNa" firstAttribute="centerY" secondItem="PKA-0Y-coA" secondAttribute="centerY" id="A1a-wK-0wd"/>
+                <constraint firstItem="qMr-pX-gKS" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="CF4-ig-6AF"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="PKA-0Y-coA" secondAttribute="bottom" id="Cxd-0J-fP9"/>
+                <constraint firstItem="PKA-0Y-coA" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="Lrl-0P-njw"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Pph-uh-4XL" secondAttribute="bottom" id="a6z-G8-LvG"/>
+                <constraint firstItem="qMr-pX-gKS" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="bpm-g5-kgW"/>
+                <constraint firstItem="Pph-uh-4XL" firstAttribute="width" secondItem="PKA-0Y-coA" secondAttribute="width" id="qHY-Tv-IWb"/>
+                <constraint firstItem="K3E-1H-WNa" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="qmN-9c-MGN"/>
+                <constraint firstItem="PKA-0Y-coA" firstAttribute="top" secondItem="qMr-pX-gKS" secondAttribute="bottom" constant="10" id="vi3-bH-QTF"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="blurSlider" destination="Xma-Ng-xPb" id="fNb-oj-PVd"/>
+            </connections>
+            <point key="canvasLocation" x="92.753623188405811" y="-98.4375"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_blur" width="19" height="27"/>
+        <image name="ic_close" width="20" height="20"/>
+        <image name="ic_tick" width="28" height="20"/>
+    </resources>
+</document>

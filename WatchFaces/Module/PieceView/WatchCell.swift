@@ -10,10 +10,6 @@ import Foundation
 import SDWebImage
 import RealmSwift
 
-protocol WatchCellProtocol{
-    func updateData()
-}
-
 class WatchCell: FSPagerViewCell {
     @IBOutlet weak var leftImageContraint: NSLayoutConstraint!
     @IBOutlet weak var rightImageContraint: NSLayoutConstraint!
@@ -25,33 +21,31 @@ class WatchCell: FSPagerViewCell {
     @IBOutlet weak var freeView: UIView!
     @IBOutlet weak var likeButton: UIButton!
     
+    
     var positionText = 0
     var totalText = 0
     var face: Face!
     let realm = try! Realm()
-    var delegate: WatchCellProtocol?
     
-    override class func awakeFromNib() {
-        super.awakeFromNib()
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
     }
     
     @IBAction func likeAction(_ sender: Any) {
         try! realm.write{
             face.isLiked = !face.isLiked
-            if !face.isLiked {
-                likeButton.setImage(#imageLiteral(resourceName: "line-heart"), for: .normal)
+            likeButton.setImage(face.isLiked ? #imageLiteral(resourceName: "red-heart") : #imageLiteral(resourceName: "line-heart"), for: .normal)
+            if face.isLiked{
+                face.isLiked = true
+                realm.add(face)
+            } else {
                 let predicate = NSPredicate(format: "id = %@", face.id)
                 let f = realm.objects(Face.self).filter(predicate)
                 if f.count > 0 {
-                    realm.delete(f)
+                    f[0].isLiked = false
                 }
-            } else {
-                likeButton.setImage(#imageLiteral(resourceName: "red-heart"), for: .normal)
-                realm.add(face, update: .all)
             }
         }
-        
-        delegate?.updateData()
         
     }
     
@@ -81,7 +75,6 @@ class WatchCell: FSPagerViewCell {
             } else {
                 freeView.isHidden = false
             }
-            self.freeView.isHidden = false
             self.likeButton.isHidden = false
             if face.isLiked{
                 likeButton.setImage(#imageLiteral(resourceName: "red-heart"), for: .normal)

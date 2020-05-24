@@ -23,8 +23,11 @@ class CategoryViewController: UIViewController, StoryboardInstantiable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         listWatchView = ListWatchView.createView(at: view)
+        listWatchView.delegate = self
         listWatchView.previewWatch.delegate = self
+        listWatchView.gridWallpaper.delegate = self
         self.listView.addSubview(listWatchView)
         UIApplication.shared.statusBarUIView?.backgroundColor = .black
     }
@@ -75,6 +78,13 @@ class CategoryViewController: UIViewController, StoryboardInstantiable {
             }
         }
     }
+    
+    func directToPreview(face: Face){
+        let vc = PreviewViewController.instantiate()
+        vc.face = face
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
+    }
 }
 
 extension CategoryViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
@@ -98,10 +108,22 @@ extension CategoryViewController: UICollectionViewDelegate, UICollectionViewData
 
 extension CategoryViewController: PreviewWatchDelegate{
     func chooseFace(face: Face) {
-        let vc = PreviewViewController.instantiate()
-        vc.face = face
+        directToPreview(face: face)
+    }
+    
+}
+
+
+extension CategoryViewController: GridWallpaperDelegate{
+    func didSelect(at face: Face) {
+        directToPreview(face: face)
+    }
+}
+
+extension CategoryViewController: ListWatchViewDelegate{
+    func getPremiumAction() {
+        let vc = PremiumViewController.instantiate()
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true, completion: nil)
     }
-    
 }

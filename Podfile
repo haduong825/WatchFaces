@@ -8,5 +8,6 @@ target 'WatchFaces' do
   # Pods for WatchFaces
   pod 'SDWebImage', '~> 5.0'
   pod 'RealmSwift'
+  pod 'SPAlert'
 
 end

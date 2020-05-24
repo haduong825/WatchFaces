@@ -143,3 +143,168 @@ var statusBarUIView: UIView? {
     return nil
   }
 }
+
+extension UIView {
+    
+    private struct AssociatedKeys {
+        static var descriptiveName = "AssociatedKeys.DescriptiveName.blurView"
+    }
+    
+    private (set) var sysblurView: SysBlurView {
+        get {
+            if let sysblurView = objc_getAssociatedObject(
+                self,
+                &AssociatedKeys.descriptiveName
+                ) as? SysBlurView {
+                return sysblurView
+            }
+            self.sysblurView = SysBlurView(to: self)
+            return self.sysblurView
+        }
+        set(sysblurView) {
+            objc_setAssociatedObject(
+                self,
+                &AssociatedKeys.descriptiveName,
+                sysblurView,
+                .OBJC_ASSOCIATION_RETAIN_NONATOMIC
+            )
+        }
+    }
+    
+    class SysBlurView {
+        
+        private var superview: UIView
+        private var blur: UIVisualEffectView?
+        private var editing: Bool = false
+        private (set) var blurContentView: UIView?
+        private (set) var vibrancyContentView: UIView?
+        
+        var animationDuration: TimeInterval = 0.1
+        
+        /**
+         * Blur style. After it is changed all subviews on
+         * blurContentView & vibrancyContentView will be deleted.
+         */
+        var style: UIBlurEffect.Style = .light {
+            didSet {
+                guard oldValue != style,
+                    !editing else { return }
+                applyBlurEffect()
+            }
+        }
+        /**
+         * Alpha component of view. It can be changed freely.
+         */
+        var alpha: CGFloat = 0 {
+            didSet {
+                guard !editing else { return }
+                if blur == nil {
+                    applyBlurEffect()
+                }
+                let alpha = self.alpha
+                UIView.animate(withDuration: animationDuration) {
+                    self.blur?.alpha = alpha
+                }
+            }
+        }
+        
+        init(to view: UIView) {
+            self.superview = view
+        }
+        
+        func setup(style: UIBlurEffect.Style, alpha: CGFloat) -> Self {
+            self.editing = true
+            
+            self.style = style
+            self.alpha = alpha
+            
+            self.editing = false
+            
+            return self
+        }
+        
+        func enable(isHidden: Bool = false) {
+//            if blur == nil {
+//                applyBlurEffect()
+//            }
+            applyBlurEffect()
+            self.blur?.isHidden = isHidden
+        }
+        
+        private func applyBlurEffect() {
+            blur?.removeFromSuperview()
+            
+            applyBlurEffect(
+                style: style,
+                blurAlpha: alpha
+            )
+        }
+        
+        private func applyBlurEffect(style: UIBlurEffect.Style,
+                                     blurAlpha: CGFloat) {
+            superview.backgroundColor = UIColor.clear
+            
+            let blurEffect = UIBlurEffect(style: style)
+            let blurEffectView = UIVisualEffectView(effect: blurEffect)
+            
+            let vibrancyEffect = UIVibrancyEffect(blurEffect: blurEffect)
+            let vibrancyView = UIVisualEffectView(effect: vibrancyEffect)
+            blurEffectView.contentView.addSubview(vibrancyView)
+            
+            blurEffectView.alpha = blurAlpha
+            
+            superview.insertSubview(blurEffectView, at: 0)
+            
+            blurEffectView.addAlignedConstrains()
+            vibrancyView.addAlignedConstrains()
+            
+            self.blur = blurEffectView
+            self.blurContentView = blurEffectView.contentView
+            self.vibrancyContentView = vibrancyView.contentView
+        }
+    }
+    
+    private func addAlignedConstrains() {
+        translatesAutoresizingMaskIntoConstraints = false
+        addAlignConstraintToSuperview(attribute: NSLayoutConstraint.Attribute.top)
+        addAlignConstraintToSuperview(attribute: NSLayoutConstraint.Attribute.leading)
+        addAlignConstraintToSuperview(attribute: NSLayoutConstraint.Attribute.trailing)
+        addAlignConstraintToSuperview(attribute: NSLayoutConstraint.Attribute.bottom)
+    }
+    
+    private func addAlignConstraintToSuperview(attribute: NSLayoutConstraint.Attribute) {
+        superview?.addConstraint(
+            NSLayoutConstraint(
+                item: self,
+                attribute: attribute,
+                relatedBy: NSLayoutConstraint.Relation.equal,
+                toItem: superview,
+                attribute: attribute,
+                multiplier: 1,
+                constant: 0
+            )
+        )
+    }
+}
+
+extension UIView {
+
+    func takeScreenshot() -> UIImage {
+
+        // Begin context
+        UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, UIScreen.main.scale)
+
+        // Draw view in that context
+        drawHierarchy(in: self.bounds, afterScreenUpdates: true)
+
+        // And finally, get image
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
+        if (image != nil)
+        {
+            return image!
+        }
+        return UIImage()
+    }
+}

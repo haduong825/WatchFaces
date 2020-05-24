@@ -22,23 +22,76 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQZ-xw-jl6">
+                    <rect key="frame" x="129" y="148" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="MUu-cY-QQy"/>
+                        <constraint firstAttribute="height" constant="40" id="Nwf-KR-29k"/>
+                    </constraints>
+                    <state key="normal" image="line-heart"/>
+                    <connections>
+                        <action selector="likeAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="I4u-dq-CPF"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4rt-r9-xkM">
+                    <rect key="frame" x="10" y="148" width="64" height="30"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Free" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FeN-Se-sBb">
+                            <rect key="frame" x="15" y="4.5" width="34" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="FeN-Se-sBb" firstAttribute="centerY" secondItem="4rt-r9-xkM" secondAttribute="centerY" id="Zkc-Oe-c8G"/>
+                        <constraint firstAttribute="trailing" secondItem="FeN-Se-sBb" secondAttribute="trailing" constant="15" id="fCx-ob-9E3"/>
+                        <constraint firstItem="FeN-Se-sBb" firstAttribute="leading" secondItem="4rt-r9-xkM" secondAttribute="leading" constant="15" id="gxd-29-B7V"/>
+                        <constraint firstAttribute="height" constant="30" id="j2V-J6-Xma"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                            <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                            <real key="value" value="0.5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                            <size key="value" width="0.0" height="5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                            <real key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="HQZ-xw-jl6" firstAttribute="bottom" secondItem="iev-dj-pIc" secondAttribute="bottom" id="0Kb-fh-WoC"/>
+                <constraint firstItem="4rt-r9-xkM" firstAttribute="leading" secondItem="iev-dj-pIc" secondAttribute="leading" constant="10" id="I0R-kl-OcD"/>
+                <constraint firstItem="HQZ-xw-jl6" firstAttribute="trailing" secondItem="iev-dj-pIc" secondAttribute="trailing" id="PiZ-yS-CVL"/>
                 <constraint firstAttribute="trailing" secondItem="iev-dj-pIc" secondAttribute="trailing" id="cjI-yV-xqO"/>
                 <constraint firstItem="iev-dj-pIc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="g2o-7a-b0c"/>
+                <constraint firstItem="4rt-r9-xkM" firstAttribute="bottom" secondItem="iev-dj-pIc" secondAttribute="bottom" constant="-10" id="iPq-hj-tWq"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="iev-dj-pIc" secondAttribute="bottom" id="q5a-pU-8kR"/>
                 <constraint firstItem="iev-dj-pIc" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="xXj-BP-LA4"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="freeView" destination="4rt-r9-xkM" id="2oS-Vk-MxC"/>
+                <outlet property="likeButton" destination="HQZ-xw-jl6" id="kwk-Sc-mwe"/>
                 <outlet property="wallpaperImageView" destination="iev-dj-pIc" id="gPV-Xt-2sT"/>
             </connections>
             <point key="canvasLocation" x="-45.652173913043484" y="389.73214285714283"/>
         </view>
     </objects>
     <resources>
+        <image name="line-heart" width="20" height="19"/>
         <image name="wallpaper" width="208" height="256"/>
     </resources>
 </document>

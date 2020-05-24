@@ -11,7 +11,7 @@
         <!--Your Favorite-->
         <scene sceneID="VWE-cj-Kou">
             <objects>
-                <viewController storyboardIdentifier="FavoriteViewController" interfaceStyle="dark" id="1Tn-3z-xp1" customClass="FavoriteViewController" customModule="WatchFaces" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FavoriteViewController" hidesBottomBarWhenPushed="YES" interfaceStyle="dark" id="1Tn-3z-xp1" customClass="FavoriteViewController" customModule="WatchFaces" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pNc-kg-Pbb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

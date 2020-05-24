@@ -14,10 +14,15 @@ enum ViewType{
     case Preview
 }
 
+protocol ListWatchViewDelegate {
+    func getPremiumAction()
+}
+
 class ListWatchView: UIView{
     var previewWatch : PreviewWatch!
     var underTopView : UnderTopView!
     var gridWallpaper: GridWallpaper!
+    var delegate: ListWatchViewDelegate?
     
     var viewType: ViewType = .Grid {
         didSet{
@@ -66,7 +71,7 @@ class ListWatchView: UIView{
 
 extension ListWatchView: UnderTopViewDelegate{
     func getPremiumAction() {
-        
+        delegate?.getPremiumAction()
     }
     
     func gridAction() {

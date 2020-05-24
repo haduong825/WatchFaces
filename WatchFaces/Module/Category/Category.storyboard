@@ -12,7 +12,7 @@
         <!--Category-->
         <scene sceneID="Fzi-dc-vxz">
             <objects>
-                <viewController storyboardIdentifier="CategoryViewController" id="wkp-FW-ZUW" customClass="CategoryViewController" customModule="WatchFaces" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CategoryViewController" hidesBottomBarWhenPushed="YES" id="wkp-FW-ZUW" customClass="CategoryViewController" customModule="WatchFaces" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w3o-Hz-SOv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -81,10 +81,10 @@
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qVo-h5-f3i">
                                 <rect key="frame" x="0.0" y="55" width="320" height="513"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="WHR-fx-XVs" firstAttribute="trailing" secondItem="Wkn-TT-i5v" secondAttribute="trailing" id="7Eg-93-ByO"/>
                             <constraint firstItem="WHR-fx-XVs" firstAttribute="top" secondItem="Wkn-TT-i5v" secondAttribute="top" constant="5" id="DIC-pv-Xvd"/>
