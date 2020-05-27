@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		9A2AAAEF247A0455003951DC /* StickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2AAAEE247A0455003951DC /* StickerView.swift */; };
-		9A2AAAF1247A2952003951DC /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2AAAF0247A2952003951DC /* SuccessView.swift */; };
 		9A2AAAF3247A301B003951DC /* ExportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2AAAF2247A301B003951DC /* ExportViewController.swift */; };
 		9A2AAB16247A5007003951DC /* SPAlertPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2AAAF6247A5007003951DC /* SPAlertPreset.swift */; };
 		9A2AAB17247A5007003951DC /* SPAlertHaptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2AAAF7247A5007003951DC /* SPAlertHaptic.swift */; };
@@ -73,7 +72,6 @@
 		9A9296C7246C49E800C410BB /* PTCardTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9296BD246C49E800C410BB /* PTCardTabBarController.swift */; };
 		9A9296D2246C58D000C410BB /* WatchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9296D1246C58D000C410BB /* WatchCell.swift */; };
 		9A9296D4246C590100C410BB /* WatchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A9296D3246C590100C410BB /* WatchCell.xib */; };
-		9AA67A7B2475150F005AF4E8 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA67A7A2475150F005AF4E8 /* Dependencies.swift */; };
 		9AA67A7E24753A12005AF4E8 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA67A7D24753A12005AF4E8 /* PreviewViewController.swift */; };
 		9AA67A8024753A20005AF4E8 /* Preview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AA67A7F24753A20005AF4E8 /* Preview.storyboard */; };
 		9AC39522246D8EF00010CE65 /* PreviewWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC39521246D8EF00010CE65 /* PreviewWatch.swift */; };
@@ -95,6 +93,8 @@
 		9AD27CDC24794D540027C315 /* ListStickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AD27CDB24794D540027C315 /* ListStickerView.xib */; };
 		9AD27CDF247987A50027C315 /* StickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD27CDD247987A50027C315 /* StickerCollectionViewCell.swift */; };
 		9AD27CE0247987A50027C315 /* StickerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AD27CDE247987A50027C315 /* StickerCollectionViewCell.xib */; };
+		9AEECB01247D79A600E5A254 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AEECB00247D79A600E5A254 /* StoreKit.framework */; };
+		9AEECB03247D879700E5A254 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEECB02247D879700E5A254 /* IAPHelper.swift */; };
 		C45A7E8EAC4318726C557C23 /* Pods_WatchFaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 810E1C32C28E1CA66AFDF920 /* Pods_WatchFaces.framework */; };
 /* End PBXBuildFile section */
 
@@ -103,7 +103,6 @@
 		5E111E5302CE034CF7C9ABDC /* Pods-WatchFaces.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchFaces.debug.xcconfig"; path = "Target Support Files/Pods-WatchFaces/Pods-WatchFaces.debug.xcconfig"; sourceTree = "<group>"; };
 		810E1C32C28E1CA66AFDF920 /* Pods_WatchFaces.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WatchFaces.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A2AAAEE247A0455003951DC /* StickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerView.swift; sourceTree = "<group>"; };
-		9A2AAAF0247A2952003951DC /* SuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
 		9A2AAAF2247A301B003951DC /* ExportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportViewController.swift; sourceTree = "<group>"; };
 		9A2AAAF6247A5007003951DC /* SPAlertPreset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPAlertPreset.swift; sourceTree = "<group>"; };
 		9A2AAAF7247A5007003951DC /* SPAlertHaptic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPAlertHaptic.swift; sourceTree = "<group>"; };
@@ -144,7 +143,7 @@
 		9A73BB7B2473FF1000FFF8AC /* FSPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPageControl.swift; sourceTree = "<group>"; };
 		9A73BB7C2473FF1000FFF8AC /* FSPagerViewObjcCompat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSPagerViewObjcCompat.m; sourceTree = "<group>"; };
 		9A73BB7D2473FF1000FFF8AC /* FSPagerCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPagerCollectionView.swift; sourceTree = "<group>"; };
-		9A73F715246AAB0C00E73966 /* WatchFaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchFaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A73F715246AAB0C00E73966 /* Watch Face.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Watch Face.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A73F718246AAB0C00E73966 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A73F71A246AAB0C00E73966 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9A73F71F246AAB0C00E73966 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -171,7 +170,6 @@
 		9A9296BD246C49E800C410BB /* PTCardTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTCardTabBarController.swift; sourceTree = "<group>"; };
 		9A9296D1246C58D000C410BB /* WatchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchCell.swift; sourceTree = "<group>"; };
 		9A9296D3246C590100C410BB /* WatchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WatchCell.xib; sourceTree = "<group>"; };
-		9AA67A7A2475150F005AF4E8 /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		9AA67A7D24753A12005AF4E8 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 		9AA67A7F24753A20005AF4E8 /* Preview.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preview.storyboard; sourceTree = "<group>"; };
 		9AC39521246D8EF00010CE65 /* PreviewWatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewWatch.swift; sourceTree = "<group>"; };
@@ -193,6 +191,8 @@
 		9AD27CDB24794D540027C315 /* ListStickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListStickerView.xib; sourceTree = "<group>"; };
 		9AD27CDD247987A50027C315 /* StickerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerCollectionViewCell.swift; sourceTree = "<group>"; };
 		9AD27CDE247987A50027C315 /* StickerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StickerCollectionViewCell.xib; sourceTree = "<group>"; };
+		9AEECB00247D79A600E5A254 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		9AEECB02247D879700E5A254 /* IAPHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C45A7E8EAC4318726C557C23 /* Pods_WatchFaces.framework in Frameworks */,
+				9AEECB01247D79A600E5A254 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,7 +324,7 @@
 		9A73F716246AAB0C00E73966 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9A73F715246AAB0C00E73966 /* WatchFaces.app */,
+				9A73F715246AAB0C00E73966 /* Watch Face.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -332,6 +333,8 @@
 			isa = PBXGroup;
 			children = (
 				9A73BB722473FEF400FFF8AC /* Library */,
+				9A2AAAEE247A0455003951DC /* StickerView.swift */,
+				9AC395432472A09E0010CE65 /* LoadingOverlay.swift */,
 				9A73F739246BCAB700E73966 /* Module */,
 				9AC3953C24727EB50010CE65 /* Network */,
 				9A73F734246BC9F200E73966 /* Extensions */,
@@ -352,7 +355,6 @@
 				9A9296BC246C49E800C410BB /* CGPoint+Distance.swift */,
 				9A73F736246BCA0000E73966 /* StoryboardInstantiable.swift */,
 				9A73F735246BCA0000E73966 /* UIView+Extension.swift */,
-				9AA67A7A2475150F005AF4E8 /* Dependencies.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -452,7 +454,6 @@
 				9AC3952F246DB7410010CE65 /* UnderTopView.xib */,
 				9AC39531246DB7560010CE65 /* UnderTopView.swift */,
 				9AC3953424713F770010CE65 /* ListWatchView.swift */,
-				9AC395432472A09E0010CE65 /* LoadingOverlay.swift */,
 				9A8DFFF42478D87100A0364C /* BlurView.swift */,
 				9A8DFFF62478D88000A0364C /* BlurView.xib */,
 				9AD27CD7247932F70027C315 /* VisualEffectView.swift */,
@@ -460,8 +461,6 @@
 				9AD27CDB24794D540027C315 /* ListStickerView.xib */,
 				9AD27CDD247987A50027C315 /* StickerCollectionViewCell.swift */,
 				9AD27CDE247987A50027C315 /* StickerCollectionViewCell.xib */,
-				9A2AAAEE247A0455003951DC /* StickerView.swift */,
-				9A2AAAF0247A2952003951DC /* SuccessView.swift */,
 			);
 			path = PieceView;
 			sourceTree = "<group>";
@@ -469,6 +468,7 @@
 		9AC3953C24727EB50010CE65 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				9AEECB02247D879700E5A254 /* IAPHelper.swift */,
 				9AC3953F24727FEA0010CE65 /* Constants.swift */,
 				9AC3953D24727EC80010CE65 /* NetworkManager.swift */,
 			);
@@ -478,6 +478,7 @@
 		F6C2C5BC0E356B6FB02C13FB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9AEECB00247D79A600E5A254 /* StoreKit.framework */,
 				810E1C32C28E1CA66AFDF920 /* Pods_WatchFaces.framework */,
 			);
 			name = Frameworks;
@@ -502,7 +503,7 @@
 			);
 			name = WatchFaces;
 			productName = WatchFaces;
-			productReference = 9A73F715246AAB0C00E73966 /* WatchFaces.app */;
+			productReference = 9A73F715246AAB0C00E73966 /* Watch Face.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -614,6 +615,7 @@
 				9A2AAB2E247A5007003951DC /* SPAlertIconCartView.swift in Sources */,
 				9AC39532246DB7560010CE65 /* UnderTopView.swift in Sources */,
 				9A2AAB26247A5007003951DC /* SPAlertIconExclamationView.swift in Sources */,
+				9AEECB03247D879700E5A254 /* IAPHelper.swift in Sources */,
 				9A2AAB30247A5007003951DC /* SPAlertIconRepeatView.swift in Sources */,
 				9A2AAAF3247A301B003951DC /* ExportViewController.swift in Sources */,
 				9A73BB842473FF1000FFF8AC /* FSPagerViewObjcCompat.m in Sources */,
@@ -666,10 +668,8 @@
 				9A73BB812473FF1000FFF8AC /* FSPagerViewLayoutAttributes.swift in Sources */,
 				9A9296C3246C49E800C410BB /* PTCardTabBar.swift in Sources */,
 				9A73BB852473FF1000FFF8AC /* FSPagerCollectionView.swift in Sources */,
-				9AA67A7B2475150F005AF4E8 /* Dependencies.swift in Sources */,
 				9AD27CDA24794D430027C315 /* ListStickerView.swift in Sources */,
 				9A2AAB21247A5007003951DC /* SPAlertIconStarView.swift in Sources */,
-				9A2AAAF1247A2952003951DC /* SuccessView.swift in Sources */,
 				9A2AAB2B247A5007003951DC /* SPAlertIconRotateView.swift in Sources */,
 				9A73BB7F2473FF1000FFF8AC /* FSPageViewTransformer.swift in Sources */,
 				9A6275ED247A96190054BD51 /* PremiumViewController.swift in Sources */,
@@ -827,7 +827,7 @@
 			baseConfigurationReference = 5E111E5302CE034CF7C9ABDC /* Pods-WatchFaces.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 374Z27ML26;
 				INFOPLIST_FILE = WatchFaces/Info.plist;
@@ -836,9 +836,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.prox.WatchFaces;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Dev All";
+				PRODUCT_BUNDLE_IDENTIFIER = com.prox.watchWallpaper;
+				PRODUCT_NAME = "Watch Face";
+				PROVISIONING_PROFILE_SPECIFIER = "Watch wallpaper Store";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -858,8 +858,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hhduong.WatchFaces;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.prox.watchWallpaper;
+				PRODUCT_NAME = "Watch Face";
 				PROVISIONING_PROFILE_SPECIFIER = "Dev All";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import StoreKit
 
 class ExportViewController: UIViewController, StoryboardInstantiable {
     
@@ -15,12 +16,14 @@ class ExportViewController: UIViewController, StoryboardInstantiable {
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var wallpaperImageView: UIImageView!
+    @IBOutlet weak var watchImageView: UIImageView!
     @IBOutlet weak var leftImageContraint: NSLayoutConstraint!
     @IBOutlet weak var rightImageContraint: NSLayoutConstraint!
     @IBOutlet weak var bottomImageContraint: NSLayoutConstraint!
     @IBOutlet weak var topImageContraint: NSLayoutConstraint!
     
     var wallpaperImage: UIImage!
+    var watchImage: UIImage!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +50,7 @@ class ExportViewController: UIViewController, StoryboardInstantiable {
     @IBAction func addToWatchAction(_ sender: Any) {
         UIImageWriteToSavedPhotosAlbum(wallpaperImage, nil, nil, nil)
         SPAlert.present(title: "Added to Photos", preset: .done)
-        
+        SKStoreReviewController.requestReview()
     }
     
     @IBAction func backToHomeAction(_ sender: Any) {

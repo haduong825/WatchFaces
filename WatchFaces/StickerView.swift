@@ -362,7 +362,6 @@ class StickerView: UIView {
             let angle = atan2f(Float(touchLocation.y - center.y), Float(touchLocation.x - center.x))
             let angleDiff = Float(self.deltaAngle) - angle
             self.transform = CGAffineTransform(rotationAngle: CGFloat(-angleDiff))
-            
             var scale = CGPointGetDistance(point1: center, point2: touchLocation) / self.initialDistance
             let minimumScale = CGFloat(self.minimumSize) / min(self.initialBounds.size.width, self.initialBounds.size.height)
             scale = max(scale, minimumScale)
@@ -371,6 +370,7 @@ class StickerView: UIView {
             self.setNeedsDisplay()
             
             if let delegate = self.delegate {
+                print("\(print(CGFloat(-angleDiff))) ---- \(scale)")
                 delegate.stickerViewDidChangeRotating(self)
             }
         case .ended:

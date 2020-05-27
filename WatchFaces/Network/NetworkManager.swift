@@ -49,7 +49,7 @@ class NetworkManager{
     
     func getCategories(completion: @escaping(CategoryResponse) -> Void){
         let url = Constants.categoryUrl + EndPoint.categorySearch
-        let param = ["filter": "titleEng==\"**\"", "pageIndex": "0", "pageSize": "11"]
+        let param = ["filter": "titleEng==\"**\"", "pageIndex": "0", "pageSize": "40"]
         request(url: url, parameters: param) { (data) in
             guard let data = data else { return }
             do {
@@ -64,7 +64,7 @@ class NetworkManager{
     
     func getFaces(id: String, completion: @escaping(FacesResponse) -> Void){
         let url = Constants.categoryUrl + EndPoint.faceSearch
-        let param = ["filter": "categoryId==\"*\(id)*\"", "pageIndex": "0", "pageSize": "11"]
+        let param = ["filter": "categoryId==\"*\(id)*\"", "pageIndex": "0", "pageSize": "40"]
         request(url: url, parameters: param) { (data) in
             guard let data = data else { return }
             do {

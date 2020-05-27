@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import StoreKit
 
 class MainTabbarViewController: PTCardTabBarController {
 
@@ -14,8 +15,12 @@ class MainTabbarViewController: PTCardTabBarController {
         createViewControllers()
         
         super.viewDidLoad()
+        
+//        SKStoreReviewController.requestReview()
 
         tabBarBackgroundColor = UIColor(rgb: 0xff1A1A1A)
+        
+        
     }
     
     func createViewControllers(){

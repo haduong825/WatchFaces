@@ -89,7 +89,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Pph-uh-4XL" secondAttribute="trailing" constant="20" id="1uo-9A-Ewi"/>
                 <constraint firstItem="Pph-uh-4XL" firstAttribute="height" secondItem="PKA-0Y-coA" secondAttribute="height" id="4qt-vk-3YG"/>

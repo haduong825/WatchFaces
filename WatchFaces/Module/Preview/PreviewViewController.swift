@@ -40,6 +40,7 @@ class PreviewViewController: UIViewController, StoryboardInstantiable {
     @IBOutlet weak var blurLabel: UILabel!
     @IBOutlet weak var stickerImageView: UIImageView!
     @IBOutlet weak var stickerLabel: UILabel!
+    @IBOutlet weak var editorStackView: UIStackView!
     
     var face: Face!
     var blurView: BlurView!
@@ -143,8 +144,10 @@ class PreviewViewController: UIViewController, StoryboardInstantiable {
         listStickerView.frame = CGRect(x: 0, y: UIScreen.main.bounds.height - 260, width: UIScreen.main.bounds.width, height: 260)
         listStickerView.stickers = stickers
         
+        let weekPurchased = UserDefaults.standard.bool(forKey: PremiumProduct.weekID)
+        let yearPurchased = UserDefaults.standard.bool(forKey: PremiumProduct.yearID)
         
-        if face.paid {
+        if face.paid && weekPurchased == false && yearPurchased {
             view.backgroundColor = #colorLiteral(red: 1, green: 0.8649501039, blue: 0.2220553254, alpha: 1)
             premiumView.isHidden = false
             unlockButton.isHidden = false
@@ -162,6 +165,8 @@ class PreviewViewController: UIViewController, StoryboardInstantiable {
             stickerImageView.image = #imageLiteral(resourceName: "ic-sticker-black")
             stickerLabel.textColor = UIColor.white
             chooseColorLabel.textColor = UIColor.black
+            blurView.backgroundColor = #colorLiteral(red: 1, green: 0.8649501039, blue: 0.2220553254, alpha: 1)
+            editorStackView.isHidden = true
         } else {
             view.backgroundColor = UIColor.black
             premiumView.isHidden = true
@@ -180,6 +185,8 @@ class PreviewViewController: UIViewController, StoryboardInstantiable {
             stickerImageView.image = #imageLiteral(resourceName: "sticker")
             stickerLabel.textColor = UIColor.white
             chooseColorLabel.textColor = UIColor.white
+            blurView.backgroundColor = UIColor.black
+            editorStackView.isHidden = false
         }
         
     }
@@ -245,18 +252,27 @@ class PreviewViewController: UIViewController, StoryboardInstantiable {
     }
     
     @IBAction func saveAction(_ sender: Any) {
-        self.selectedStickerView?.showEditingHandlers = false
-        
-        let img = self.wallpaperImageView.takeScreenshot()
-        
-        let vc = ExportViewController.instantiate()
-        vc.wallpaperImage = img
-        vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated: true, completion: nil)
-        
-        
+        if face.paid {
+            let vc = PremiumViewController.instantiate()
+            vc.modalPresentationStyle = .overFullScreen
+            self.present(vc, animated: true, completion: nil)
+        } else {
+            self.selectedStickerView?.showEditingHandlers = false
+            
+            let img = self.wallpaperImageView.takeScreenshot()
+            
+            let vc = ExportViewController.instantiate()
+            vc.wallpaperImage = img
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true, completion: nil)
+        }
     }
     
+    @IBAction func unlockAction(_ sender: Any) {
+        let vc = PremiumViewController.instantiate()
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: true, completion: nil)
+    }
 }
 
 
@@ -281,6 +297,9 @@ extension PreviewViewController: BlurViewDelegate{
 extension PreviewViewController: ListStickerViewDelegate{
     func closeStickerAction() {
         listStickerView.removeFromSuperview()
+        for sticker in listSticker{
+            sticker.removeFromSuperview()
+        }
     }
     
     func doneStickerAction() {
@@ -293,6 +312,7 @@ extension PreviewViewController: ListStickerViewDelegate{
             wallpaperImageView.addSubview(sticker)
         }
         
+        listSticker.removeAll()
         listStickerView.removeFromSuperview()
     }
     
@@ -301,19 +321,16 @@ extension PreviewViewController: ListStickerViewDelegate{
         let imageView = UIImageView(image: image)
         imageView.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
         
-        
-        
         let stickerView = StickerView(contentView: imageView)
         listSticker.append(stickerView)
         stickerView.delegate = self
         stickerView.center = visualEffectView.contentView.center
         stickerView.setImage(UIImage.init(named: "Close")!, forHandler: StickerViewHandler.close)
-        stickerView.setImage(UIImage.init(named: "Rotate")!, forHandler: StickerViewHandler.rotate)
+//        stickerView.setImage(UIImage.init(named: "Rotate")!, forHandler: StickerViewHandler.rotate)
+        stickerView.enableRotate = false
         stickerView.setImage(UIImage.init(named: "Flip")!, forHandler: StickerViewHandler.flip)
         stickerView.setHandlerSize(30)
         stickerView.showEditingHandlers = true
-        
-//        stickerView.addSubview(imageView)
         view.addSubview(stickerView)
     }
 }
