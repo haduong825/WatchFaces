@@ -94,7 +94,9 @@ class PremiumViewController: UIViewController, StoryboardInstantiable {
     }
     
     @IBAction func restoreAction(_ sender: Any) {
+        LoadingOverlay.shared.showOverlay(view: self.view)
         PremiumProduct.store.restorePurchases()
+        LoadingOverlay.shared.hideOverlayView()
     }
     
     @IBAction func closeAction(_ sender: Any) {

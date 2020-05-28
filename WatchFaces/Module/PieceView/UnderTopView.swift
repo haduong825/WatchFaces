@@ -18,19 +18,26 @@ class UnderTopView: UIView {
     
     @IBOutlet weak var previewButton: UIButton!
     @IBOutlet weak var gridButton: UIButton!
+    @IBOutlet weak var getPremiumButton: UIButton!
     
     var delegate: UnderTopViewDelegate?
     
     open class func createView() -> UnderTopView{
         let views = Bundle.main.loadNibNamed("UnderTopView", owner: self, options: nil)
         let view = views?.first as! UnderTopView
-        
+        if PremiumProduct.store.checkPurchased(){
+            view.getPremiumButton.backgroundColor = UIColor.black
+        } else {
+            view.getPremiumButton.backgroundColor = UIColor.clear
+        }
         return view
     
     }
 
     @IBAction func getPremiumAction(_ sender: Any) {
-        delegate?.getPremiumAction()
+        if !PremiumProduct.store.checkPurchased(){
+            delegate?.getPremiumAction()
+        }
     }
     
     @IBAction func gridAction(_ sender: Any) {

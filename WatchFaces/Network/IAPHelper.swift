@@ -82,6 +82,15 @@ extension IAPHelper {
         return purchasedProductIdentifiers.contains(productIdentifier)
     }
     
+    public func checkPurchased() -> Bool{
+        let weekPurchased = UserDefaults.standard.bool(forKey: PremiumProduct.weekID)
+        let yearPurchased = UserDefaults.standard.bool(forKey: PremiumProduct.yearID)
+        if weekPurchased || yearPurchased {
+            return true
+        }
+        return false
+    }
+    
     public class func canMakePayments() -> Bool {
         return SKPaymentQueue.canMakePayments()
     }

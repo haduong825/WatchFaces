@@ -25,9 +25,12 @@ class FavoriteViewController: UIViewController, StoryboardInstantiable {
         listWatchView.previewWatch.delegate = self
         listWatchView.gridWallpaper.delegate = self
         
-        let vc = PremiumViewController.instantiate()
-        vc.modalPresentationStyle = .overFullScreen
-        self.present(vc, animated: true, completion: nil)
+        if !PremiumProduct.store.checkPurchased() {
+            let vc = PremiumViewController.instantiate()
+            vc.modalPresentationStyle = .overFullScreen
+            self.present(vc, animated: true, completion: nil)
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -78,7 +81,6 @@ extension FavoriteViewController: PreviewWatchDelegate{
 }
 
 extension FavoriteViewController: GridWallpaperDelegate{
-    
     func didSelect(at face: Face) {
         directToPreview(face: face)
     }

@@ -48,6 +48,7 @@ class PreviewViewController: UIViewController, StoryboardInstantiable {
     var faceImage: UIImage?
     let visualEffectView = VisualEffectView()
     var blurRadius: CGFloat = 0
+    var watchImage: UIImage!
     var stickers = [UIImage]()
     var stickerImageViews = [UIImageView]()
     private var listSticker = [StickerView]()
@@ -99,12 +100,6 @@ class PreviewViewController: UIViewController, StoryboardInstantiable {
             stickers.append(UIImage(named: "Rectangle Copy \(i)") ?? UIImage())
         }
         
-        visualEffectView.frame = CGRect(x: 0, y: 0, width: wallpaperImageView.frame.width, height: wallpaperImageView.frame.height)
-        visualEffectView.colorTint = .black
-        visualEffectView.colorTintAlpha = 0
-        visualEffectView.blurRadius = 0
-        visualEffectView.scale = 1
-        
         firstView.layer.cornerRadius = firstView.frame.width / 2
         
         
@@ -144,10 +139,7 @@ class PreviewViewController: UIViewController, StoryboardInstantiable {
         listStickerView.frame = CGRect(x: 0, y: UIScreen.main.bounds.height - 260, width: UIScreen.main.bounds.width, height: 260)
         listStickerView.stickers = stickers
         
-        let weekPurchased = UserDefaults.standard.bool(forKey: PremiumProduct.weekID)
-        let yearPurchased = UserDefaults.standard.bool(forKey: PremiumProduct.yearID)
-        
-        if face.paid && weekPurchased == false && yearPurchased {
+        if face.paid && !PremiumProduct.store.checkPurchased() {
             view.backgroundColor = #colorLiteral(red: 1, green: 0.8649501039, blue: 0.2220553254, alpha: 1)
             premiumView.isHidden = false
             unlockButton.isHidden = false
@@ -239,6 +231,11 @@ class PreviewViewController: UIViewController, StoryboardInstantiable {
     }
     
     @IBAction func blurAction(_ sender: Any) {
+        visualEffectView.frame = CGRect(x: 0, y: 0, width: wallpaperImageView.frame.width, height: wallpaperImageView.frame.height)
+        visualEffectView.colorTint = .black
+        visualEffectView.colorTintAlpha = 0
+        visualEffectView.blurRadius = 0
+        visualEffectView.scale = 1
         wallpaperImageView.addSubview(visualEffectView)
         self.view.addSubview(blurView)
     }
@@ -252,7 +249,7 @@ class PreviewViewController: UIViewController, StoryboardInstantiable {
     }
     
     @IBAction func saveAction(_ sender: Any) {
-        if face.paid {
+        if face.paid && !PremiumProduct.store.checkPurchased() {
             let vc = PremiumViewController.instantiate()
             vc.modalPresentationStyle = .overFullScreen
             self.present(vc, animated: true, completion: nil)
@@ -263,6 +260,7 @@ class PreviewViewController: UIViewController, StoryboardInstantiable {
             
             let vc = ExportViewController.instantiate()
             vc.wallpaperImage = img
+            vc.watchImage = watchImageView.image
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: true, completion: nil)
         }

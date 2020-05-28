@@ -40,7 +40,7 @@ class SettingViewController: UIViewController, StoryboardInstantiable {
     }
     
     @objc func showFeedback(){
-        let vc = SFSafariViewController(url: URL(string: "https://sites.google.com/view/termswfg/home")!)
+        let vc = SFSafariViewController(url: URL(string: "https://proxpolicy.github.io/Watch_Face/terms_of_service")!)
         self.present(vc, animated: true, completion: nil)
         vc.delegate = self
     }
@@ -86,7 +86,7 @@ class SettingViewController: UIViewController, StoryboardInstantiable {
     }
     
     @objc func showPrivacy(){
-        let vc = SFSafariViewController(url: URL(string: "https://www.termsfeed.com/privacy-policy/e0f8a1cdc135bf771d08411385b28a2d")!)
+        let vc = SFSafariViewController(url: URL(string: "https://proxpolicy.github.io/Watch_Face/privacy")!)
         self.present(vc, animated: true, completion: nil)
         vc.delegate = self
     }

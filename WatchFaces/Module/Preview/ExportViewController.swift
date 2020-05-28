@@ -33,6 +33,7 @@ class ExportViewController: UIViewController, StoryboardInstantiable {
     
     func setupUI(){
         self.wallpaperImageView.image = wallpaperImage
+        self.watchImageView.image = watchImage
         
         let height = self.view.safeAreaLayoutGuide.layoutFrame.size.height - 250
         let width = height * 67/108

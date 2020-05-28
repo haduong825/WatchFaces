@@ -44,7 +44,9 @@ class PreviewWatch: UIView {
     
     
     @IBAction func chooseAction(_ sender: Any) {
-        delegate?.chooseFace(face: arrWatch[pagerView.currentIndex])
+        if arrWatch.count > 0 {
+            delegate?.chooseFace(face: arrWatch[pagerView.currentIndex])
+        }
     }
     
     override func layoutSubviews() {
