@@ -15,6 +15,7 @@ protocol PreviewWatchDelegate {
 class PreviewWatch: UIView {
 
     @IBOutlet weak var pagerView: FSPagerView!
+    @IBOutlet weak var chooseButton: UIButton!
     
     private let kCell = "watchCell"
     
@@ -35,6 +36,7 @@ class PreviewWatch: UIView {
         pagerView.itemSize = CGSize(width: UIScreen.main.bounds.width - 150, height: (UIScreen.main.bounds.width - 150) * 108/67)
         pagerView.dataSource = self
         pagerView.delegate = self
+        
     }
     
     func setupDataSource(faces: [Face]){
@@ -46,17 +48,15 @@ class PreviewWatch: UIView {
     @IBAction func chooseAction(_ sender: Any) {
         if arrWatch.count > 0 {
             delegate?.chooseFace(face: arrWatch[pagerView.currentIndex])
+        } else {
+            guard let vc = self.viewController() else {return}
+            let alert = UIAlertController(title: "Notice!", message: "You need add your wallpaper from Explore tab.", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            vc.present(alert, animated: true, completion: nil)
+            
         }
     }
     
-    override func layoutSubviews() {
-        if arrWatch.count > 1{
-            print(pagerView.currentIndex)
-            if arrWatch[pagerView.currentIndex].paid {
-                
-            }
-        }
-    }
 }
 
 

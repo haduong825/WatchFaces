@@ -827,9 +827,9 @@
 			baseConfigurationReference = 5E111E5302CE034CF7C9ABDC /* Pods-WatchFaces.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = 374Z27ML26;
 				INFOPLIST_FILE = WatchFaces/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -839,7 +839,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.prox.watchWallpaper;
 				PRODUCT_NAME = "Watch Face";
-				PROVISIONING_PROFILE_SPECIFIER = "Watch wallpaper Dev";
+				PROVISIONING_PROFILE_SPECIFIER = "Watch wallpaper Store";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -852,7 +852,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = 374Z27ML26;
 				INFOPLIST_FILE = WatchFaces/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;

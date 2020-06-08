@@ -28,20 +28,30 @@ class ExportViewController: UIViewController, StoryboardInstantiable {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        LoadingOverlay.shared.showOverlay(view: view)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         setupUI()
     }
     
     func setupUI(){
+        let height = containerView.frame.height
+        let width = containerView.frame.width
+        
+        self.leftImageContraint.constant = (13 / 246) * width
+        self.rightImageContraint.constant = -(25 / 246) * width
+        self.topImageContraint.constant = (89 / 452) * height
+        self.bottomImageContraint.constant = -(108 / 452) * height
+        
         self.wallpaperImageView.image = wallpaperImage
         self.watchImageView.image = watchImage
-        
-        let height = self.view.safeAreaLayoutGuide.layoutFrame.size.height - 250
-        let width = height * 67/108
-        
-        self.leftImageContraint.constant = (20 / 268) * width
-        self.rightImageContraint.constant = -(32 / 268) * width
-        self.topImageContraint.constant = (80 / 432) * height
-        self.bottomImageContraint.constant = -(100 / 432) * height
+        LoadingOverlay.shared.hideOverlayView()
     }
     
     @IBAction func backAction(_ sender: Any) {

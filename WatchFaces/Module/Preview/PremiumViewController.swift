@@ -11,8 +11,8 @@ import StoreKit
 
 public struct PremiumProduct {
     
-    public static let weekID = "com.prox.watchWallpaper.week"
-    public static let yearID = "com.prox.watchWallpaper.yearly"
+    public static let weekID = "com.prox.watchWallpaper.weekly"
+    public static let yearID = "com.prox.watchWallpaper.yearlyPremium"
     
     private static let productIdentifiers: Set<ProductIdentifier> = [PremiumProduct.weekID, PremiumProduct.yearID]
     

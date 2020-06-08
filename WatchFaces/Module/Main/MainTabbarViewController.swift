@@ -32,7 +32,7 @@ class MainTabbarViewController: PTCardTabBarController {
         categoryViewController.tabBarItem = UITabBarItem(title: "", image: #imageLiteral(resourceName: "ic_category"), selectedImage: #imageLiteral(resourceName: "ic_category_selected"))
         settingViewController.tabBarItem = UITabBarItem(title: "", image: #imageLiteral(resourceName: "ic_setting"), selectedImage: #imageLiteral(resourceName: "ic_setting_selected"))
 
-        self.viewControllers = [favoriteViewController, categoryViewController, settingViewController]
+        self.viewControllers = [categoryViewController, favoriteViewController, settingViewController]
     }
 
 

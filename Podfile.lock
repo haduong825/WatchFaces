@@ -7,22 +7,26 @@ PODS:
   - SDWebImage (5.8.0):
     - SDWebImage/Core (= 5.8.0)
   - SDWebImage/Core (5.8.0)
+  - SPAlert (2.1.4)
 
 DEPENDENCIES:
   - RealmSwift
   - SDWebImage (~> 5.0)
+  - SPAlert
 
 SPEC REPOS:
   trunk:
     - Realm
     - RealmSwift
     - SDWebImage
+    - SPAlert
 
 SPEC CHECKSUMS:
   Realm: 76066d333de26f97e9caedaa85ee3ff4a62ca265
   RealmSwift: c1bdff09b422569dc6881410d9ccf712bcdb79b0
   SDWebImage: 84000f962cbfa70c07f19d2234cbfcf5d779b5dc
+  SPAlert: 1a8afa1c6ac86a82ab5b2cfdf7f9a51e68cb6c0c
 
-PODFILE CHECKSUM: 701681d4281d9238406fb169b75b5973f73bcc39
+PODFILE CHECKSUM: 1db78414e9200ddd511c178c6edc3a5c34da0a37
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.3

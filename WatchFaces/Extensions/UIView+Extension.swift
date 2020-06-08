@@ -112,36 +112,36 @@ extension UIView{
 
 
 extension UIApplication {
-var statusBarUIView: UIView? {
-
-    if #available(iOS 13.0, *) {
-        let tag = 3848245
-
-        let keyWindow = UIApplication.shared.connectedScenes
-            .map({$0 as? UIWindowScene})
-            .compactMap({$0})
-            .first?.windows.first
-
-        if let statusBar = keyWindow?.viewWithTag(tag) {
-            return statusBar
+    var statusBarUIView: UIView? {
+        
+        if #available(iOS 13.0, *) {
+            let tag = 3848245
+            
+            let keyWindow = UIApplication.shared.connectedScenes
+                .map({$0 as? UIWindowScene})
+                .compactMap({$0})
+                .first?.windows.first
+            
+            if let statusBar = keyWindow?.viewWithTag(tag) {
+                return statusBar
+            } else {
+                let height = keyWindow?.windowScene?.statusBarManager?.statusBarFrame ?? .zero
+                let statusBarView = UIView(frame: height)
+                statusBarView.tag = tag
+                statusBarView.layer.zPosition = 999999
+                
+                keyWindow?.addSubview(statusBarView)
+                return statusBarView
+            }
+            
         } else {
-            let height = keyWindow?.windowScene?.statusBarManager?.statusBarFrame ?? .zero
-            let statusBarView = UIView(frame: height)
-            statusBarView.tag = tag
-            statusBarView.layer.zPosition = 999999
-
-            keyWindow?.addSubview(statusBarView)
-            return statusBarView
+            
+            if responds(to: Selector(("statusBar"))) {
+                return value(forKey: "statusBar") as? UIView
+            }
         }
-
-    } else {
-
-        if responds(to: Selector(("statusBar"))) {
-            return value(forKey: "statusBar") as? UIView
-        }
+        return nil
     }
-    return nil
-  }
 }
 
 extension UIView {
@@ -224,9 +224,9 @@ extension UIView {
         }
         
         func enable(isHidden: Bool = false) {
-//            if blur == nil {
-//                applyBlurEffect()
-//            }
+            //            if blur == nil {
+            //                applyBlurEffect()
+            //            }
             applyBlurEffect()
             self.blur?.isHidden = isHidden
         }
@@ -288,23 +288,31 @@ extension UIView {
 }
 
 extension UIView {
-
+    
     func takeScreenshot() -> UIImage {
-
+        
         // Begin context
         UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, UIScreen.main.scale)
-
+        
         // Draw view in that context
         drawHierarchy(in: self.bounds, afterScreenUpdates: true)
-
+        
         // And finally, get image
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-
+        
         if (image != nil)
         {
             return image!
         }
         return UIImage()
+    }
+    
+    func viewController() -> UIViewController? {
+        var nr = self.next
+        while nr != nil && !(nr! is UIViewController) {
+            nr = nr!.next
+        }
+        return nr as? UIViewController
     }
 }

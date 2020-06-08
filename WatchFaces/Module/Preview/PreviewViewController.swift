@@ -22,10 +22,11 @@ class PreviewViewController: UIViewController, StoryboardInstantiable {
     @IBOutlet weak var wallpaperImageView: UIImageView!
     
     @IBOutlet weak var firstView: UIView!
-    @IBOutlet weak var secondView: UIView!
+    @IBOutlet weak var firstChildView: UIView!
     @IBOutlet weak var thirdView: UIView!
+    @IBOutlet weak var thirdChildView: UIView!
     @IBOutlet weak var fourView: UIView!
-    @IBOutlet weak var fifthView: UIView!
+    @IBOutlet weak var fourChildView: UIView!
     
     @IBOutlet weak var colorStackView: UIStackView!
     @IBOutlet weak var chooseColorLabel: UILabel!
@@ -77,11 +78,12 @@ class PreviewViewController: UIViewController, StoryboardInstantiable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
 
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         setupUI()
     }
     
@@ -89,18 +91,24 @@ class PreviewViewController: UIViewController, StoryboardInstantiable {
         self.navigationController?.navigationBar.isHidden = true
         self.hidesBottomBarWhenPushed = true
         let width = UIScreen.main.bounds.width * 0.7
-        let height = width * 108/67
+        let height = width * 452/246
         
-        self.leftImageContraint.constant = (20 / 268) * width
-        self.rightImageContraint.constant = -(32 / 268) * width
-        self.topImageContraint.constant = (80 / 432) * height
-        self.bottomImageContraint.constant = -(100 / 432) * height
+        self.leftImageContraint.constant = (13 / 246) * width
+        self.rightImageContraint.constant = -(24 / 246) * width
+        self.topImageContraint.constant = (89 / 452) * height
+        self.bottomImageContraint.constant = -(108 / 452) * height
         
         for i in 10..<94{
             stickers.append(UIImage(named: "Rectangle Copy \(i)") ?? UIImage())
         }
         
         firstView.layer.cornerRadius = firstView.frame.width / 2
+        thirdView.layer.cornerRadius = firstView.frame.width / 2
+        fourView.layer.cornerRadius = firstView.frame.width / 2
+        firstChildView.layer.cornerRadius = firstChildView.frame.width / 2
+        thirdChildView.layer.cornerRadius = thirdChildView.frame.width / 2
+        fourChildView.layer.cornerRadius = fourChildView.frame.width / 2
+        
         
         
         let imageUrl = Constants.baseUrl + EndPoint.watch + face.url
@@ -111,10 +119,6 @@ class PreviewViewController: UIViewController, StoryboardInstantiable {
         firstButton.tag = 1000
         firstButton.addTarget(self, action: #selector(selectColor(_:)), for: .touchUpInside)
         firstView.addSubview(firstButton)
-        let secondButton = UIButton(frame: secondView.frame)
-        secondButton.tag = 1001
-        secondButton.addTarget(self, action: #selector(selectColor(_:)), for: .touchUpInside)
-        secondView.addSubview(secondButton)
         let thirdButton = UIButton(frame: thirdView.frame)
         thirdButton.tag = 1002
         thirdButton.addTarget(self, action: #selector(selectColor(_:)), for: .touchUpInside)
@@ -123,10 +127,6 @@ class PreviewViewController: UIViewController, StoryboardInstantiable {
         fourButton.tag = 1003
         fourButton.addTarget(self, action: #selector(selectColor(_:)), for: .touchUpInside)
         fourView.addSubview(fourButton)
-        let fifthButton = UIButton(frame: fifthView.frame)
-        fifthButton.tag = 1004
-        fifthButton.addTarget(self, action: #selector(selectColor(_:)), for: .touchUpInside)
-        fifthView.addSubview(fifthButton)
         
         selectColor(firstButton)
         
@@ -148,10 +148,8 @@ class PreviewViewController: UIViewController, StoryboardInstantiable {
             saveButton.setTitleColor(UIColor.black, for: .normal)
             saveButton.setTitle("Unlock", for: .normal)
             firstView.borderColor = UIColor.black
-            secondView.borderColor = UIColor.black
             thirdView.borderColor = UIColor.black
             fourView.borderColor = UIColor.black
-            fifthView.borderColor = UIColor.black
             blurImageView.image = #imageLiteral(resourceName: "ic-blur-black")
             blurLabel.textColor = UIColor.black
             stickerImageView.image = #imageLiteral(resourceName: "ic-sticker-black")
@@ -168,10 +166,8 @@ class PreviewViewController: UIViewController, StoryboardInstantiable {
             saveButton.setTitleColor(UIColor.white, for: .normal)
             saveButton.setTitle("Save", for: .normal)
             firstView.borderColor = UIColor.white
-            secondView.borderColor = UIColor.white
             thirdView.borderColor = UIColor.white
             fourView.borderColor = UIColor.white
-            fifthView.borderColor = UIColor.white
             blurImageView.image = #imageLiteral(resourceName: "ic_blur")
             blurLabel.textColor = UIColor.white
             stickerImageView.image = #imageLiteral(resourceName: "sticker")
@@ -181,14 +177,14 @@ class PreviewViewController: UIViewController, StoryboardInstantiable {
             editorStackView.isHidden = false
         }
         
+        visualEffectView.frame = CGRect(x: 0, y: 0, width: wallpaperImageView.frame.width, height: wallpaperImageView.frame.height)
+        
     }
     
     func resetBorder(){
         firstView.layer.borderWidth = 0
-        secondView.layer.borderWidth = 0
         thirdView.layer.borderWidth = 0
         fourView.layer.borderWidth = 0
-        fifthView.layer.borderWidth = 0
     }
     
     @objc func selectColor(_ sender: UIButton){
@@ -196,19 +192,13 @@ class PreviewViewController: UIViewController, StoryboardInstantiable {
         switch sender.tag {
         case 1000:
             firstView.layer.borderWidth = 1
-            watchImageView.image = #imageLiteral(resourceName: "image_applewatch")
-        case 1001:
-            secondView.layer.borderWidth = 1
-            watchImageView.image = #imageLiteral(resourceName: "aw-b")
+            watchImageView.image = #imageLiteral(resourceName: "aw-line-b")
         case 1002:
             thirdView.layer.borderWidth = 1
-            watchImageView.image = #imageLiteral(resourceName: "watch_silver")
+            watchImageView.image = #imageLiteral(resourceName: "aw-white")
         case 1003:
             fourView.layer.borderWidth = 1
-            watchImageView.image = #imageLiteral(resourceName: "watch_rose_gold")
-        case 1004:
-            fifthView.layer.borderWidth = 1
-            watchImageView.image = #imageLiteral(resourceName: "watch_rose_gold")
+            watchImageView.image = #imageLiteral(resourceName: "aw-pink")
         default:
             break
         }
@@ -231,7 +221,7 @@ class PreviewViewController: UIViewController, StoryboardInstantiable {
     }
     
     @IBAction func blurAction(_ sender: Any) {
-        visualEffectView.frame = CGRect(x: 0, y: 0, width: wallpaperImageView.frame.width, height: wallpaperImageView.frame.height)
+        
         visualEffectView.colorTint = .black
         visualEffectView.colorTintAlpha = 0
         visualEffectView.blurRadius = 0

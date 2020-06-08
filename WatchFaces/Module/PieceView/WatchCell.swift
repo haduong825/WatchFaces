@@ -53,18 +53,23 @@ class WatchCell: FSPagerViewCell {
         let width = UIScreen.main.bounds.width - 150
         let height = width * 108/67
         
-        self.leftImageContraint.constant = (20 / 268) * width
-        self.rightImageContraint.constant = -(32 / 268) * width
-        self.topImageContraint.constant = (80 / 432) * height
-        self.bottomImageContraint.constant = -(100 / 432) * height
-        
         if totalText == 0{
+            self.leftImageContraint.constant = (25 / 246) * width
+            self.rightImageContraint.constant = -(37 / 246) * width
+            self.topImageContraint.constant = (89 / 452) * height
+            self.bottomImageContraint.constant = -(108 / 452) * height
+            
             self.positionLabel.text = ""
             self.wallpaperImage.image = #imageLiteral(resourceName: "favorite_empty")
             self.wallpaperImage.contentMode = .scaleAspectFit
             self.freeView.isHidden = true
             self.likeButton.isHidden = true
         } else {
+            self.leftImageContraint.constant = (13 / 246) * width
+            self.rightImageContraint.constant = -(24 / 246) * width
+            self.topImageContraint.constant = (89 / 452) * height
+            self.bottomImageContraint.constant = -(108 / 452) * height
+            
             self.positionLabel.text = "\(positionText+1) / \(totalText)"
             self.wallpaperImage.contentMode = .scaleAspectFill
             let imageUrl = Constants.baseUrl + EndPoint.watch + face.url
