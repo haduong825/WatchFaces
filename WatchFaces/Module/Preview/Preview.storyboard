@@ -193,7 +193,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="781-cy-lTz">
                                 <rect key="frame" x="116.5" y="109.5" width="243.5" height="448"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_applewatch" translatesAutoresizingMaskIntoConstraints="NO" id="PZW-cH-1lb">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aw-line-w" translatesAutoresizingMaskIntoConstraints="NO" id="PZW-cH-1lb">
                                         <rect key="frame" x="0.0" y="0.0" width="243.5" height="448"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="PZW-cH-1lb" secondAttribute="height" multiplier="246:452" id="lfi-zR-vzb"/>
@@ -843,6 +843,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="aw-line-w" width="235" height="451"/>
         <image name="background" width="375" height="253"/>
         <image name="benefit" width="205" height="125"/>
         <image name="bg_premium" width="375" height="292"/>

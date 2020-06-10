@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "aw.png",
+      "filename" : "aw-line-y.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "aw@2x.png",
+      "filename" : "aw-line-y@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "aw@3x.png",
+      "filename" : "aw-line-y@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

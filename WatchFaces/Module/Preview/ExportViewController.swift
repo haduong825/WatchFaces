@@ -45,9 +45,11 @@ class ExportViewController: UIViewController, StoryboardInstantiable {
         let width = containerView.frame.width
         
         self.leftImageContraint.constant = (13 / 246) * width
-        self.rightImageContraint.constant = -(25 / 246) * width
+        self.rightImageContraint.constant = -(13 / 246) * width
         self.topImageContraint.constant = (89 / 452) * height
         self.bottomImageContraint.constant = -(108 / 452) * height
+        
+        self.wallpaperImageView.layer.cornerRadius = 30 * UIScreen.main.bounds.width / 375
         
         self.wallpaperImageView.image = wallpaperImage
         self.watchImageView.image = watchImage

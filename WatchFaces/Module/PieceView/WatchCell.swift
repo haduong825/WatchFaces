@@ -55,7 +55,7 @@ class WatchCell: FSPagerViewCell {
         
         if totalText == 0{
             self.leftImageContraint.constant = (25 / 246) * width
-            self.rightImageContraint.constant = -(37 / 246) * width
+            self.rightImageContraint.constant = -(25 / 246) * width
             self.topImageContraint.constant = (89 / 452) * height
             self.bottomImageContraint.constant = -(108 / 452) * height
             
@@ -66,9 +66,11 @@ class WatchCell: FSPagerViewCell {
             self.likeButton.isHidden = true
         } else {
             self.leftImageContraint.constant = (13 / 246) * width
-            self.rightImageContraint.constant = -(24 / 246) * width
+            self.rightImageContraint.constant = -(13 / 246) * width
             self.topImageContraint.constant = (89 / 452) * height
             self.bottomImageContraint.constant = -(108 / 452) * height
+            
+            self.wallpaperImage.layer.cornerRadius = 30 * UIScreen.main.bounds.width / 375
             
             self.positionLabel.text = "\(positionText+1) / \(totalText)"
             self.wallpaperImage.contentMode = .scaleAspectFill

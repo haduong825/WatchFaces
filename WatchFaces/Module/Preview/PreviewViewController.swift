@@ -79,7 +79,6 @@ class PreviewViewController: UIViewController, StoryboardInstantiable {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -90,26 +89,28 @@ class PreviewViewController: UIViewController, StoryboardInstantiable {
     func setupUI(){
         self.navigationController?.navigationBar.isHidden = true
         self.hidesBottomBarWhenPushed = true
-        let width = UIScreen.main.bounds.width * 0.7
+        let width = UIScreen.main.bounds.width * 0.65
         let height = width * 452/246
         
         self.leftImageContraint.constant = (13 / 246) * width
-        self.rightImageContraint.constant = -(24 / 246) * width
+        self.rightImageContraint.constant = -(13 / 246) * width
         self.topImageContraint.constant = (89 / 452) * height
         self.bottomImageContraint.constant = -(108 / 452) * height
+        
+        self.wallpaperImageView.layer.cornerRadius = 30 * UIScreen.main.bounds.width / 375
         
         for i in 10..<94{
             stickers.append(UIImage(named: "Rectangle Copy \(i)") ?? UIImage())
         }
         
-        firstView.layer.cornerRadius = firstView.frame.width / 2
-        thirdView.layer.cornerRadius = firstView.frame.width / 2
-        fourView.layer.cornerRadius = firstView.frame.width / 2
-        firstChildView.layer.cornerRadius = firstChildView.frame.width / 2
-        thirdChildView.layer.cornerRadius = thirdChildView.frame.width / 2
-        fourChildView.layer.cornerRadius = fourChildView.frame.width / 2
-        
-        
+        UIView.animate(withDuration: 0.3) {
+            self.firstView.layer.cornerRadius = self.firstView.frame.width / 2
+            self.thirdView.layer.cornerRadius = self.firstView.frame.width / 2
+            self.fourView.layer.cornerRadius = self.firstView.frame.width / 2
+            self.firstChildView.layer.cornerRadius = self.firstChildView.frame.width / 2
+            self.thirdChildView.layer.cornerRadius = self.thirdChildView.frame.width / 2
+            self.fourChildView.layer.cornerRadius = self.fourChildView.frame.width / 2
+        }
         
         let imageUrl = Constants.baseUrl + EndPoint.watch + face.url
         self.wallpaperImageView.sd_imageIndicator = SDWebImageActivityIndicator.whiteLarge
@@ -195,10 +196,10 @@ class PreviewViewController: UIViewController, StoryboardInstantiable {
             watchImageView.image = #imageLiteral(resourceName: "aw-line-b")
         case 1002:
             thirdView.layer.borderWidth = 1
-            watchImageView.image = #imageLiteral(resourceName: "aw-white")
+            watchImageView.image = #imageLiteral(resourceName: "aw-line-w")
         case 1003:
             fourView.layer.borderWidth = 1
-            watchImageView.image = #imageLiteral(resourceName: "aw-pink")
+            watchImageView.image = #imageLiteral(resourceName: "aw-line-p")
         default:
             break
         }

@@ -14,7 +14,7 @@
             <rect key="frame" x="0.0" y="0.0" width="246" height="452"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aw-white" translatesAutoresizingMaskIntoConstraints="NO" id="cLa-1O-Cdn">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aw-line-w" translatesAutoresizingMaskIntoConstraints="NO" id="cLa-1O-Cdn">
                     <rect key="frame" x="0.0" y="0.0" width="246" height="452"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="cLa-1O-Cdn" secondAttribute="height" multiplier="246:452" id="bxb-en-m7W"/>
@@ -117,7 +117,7 @@
         </view>
     </objects>
     <resources>
-        <image name="aw-white" width="247" height="451"/>
+        <image name="aw-line-w" width="235" height="451"/>
         <image name="line-heart" width="20" height="19"/>
         <image name="wallpaper" width="208" height="256"/>
     </resources>
