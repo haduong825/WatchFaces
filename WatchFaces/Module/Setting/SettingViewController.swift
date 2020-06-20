@@ -86,9 +86,9 @@ class SettingViewController: UIViewController, StoryboardInstantiable {
     }
     
     @objc func showPrivacy(){
-        let vc = SFSafariViewController(url: URL(string: "https://proxpolicy.github.io/Watch_Face/privacy")!)
-        self.present(vc, animated: true, completion: nil)
-        vc.delegate = self
+            let vc = SFSafariViewController(url: URL(string: "https://proxpolicy.github.io/Watch_Face/privacy")!)
+            self.present(vc, animated: true, completion: nil)
+            vc.delegate = self
     }
     
 }

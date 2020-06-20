@@ -8,6 +8,7 @@
 
 import UIKit
 import StoreKit
+import SafariServices
 
 public struct PremiumProduct {
     
@@ -28,6 +29,8 @@ class PremiumViewController: UIViewController, StoryboardInstantiable {
     @IBOutlet weak var weeklyView: UIView!
     @IBOutlet weak var yearlyLabel: UILabel!
     @IBOutlet weak var weeklyLabel: UILabel!
+    @IBOutlet weak var termButton: UIButton!
+    @IBOutlet weak var privacyButton: UIButton!
     
     var yearProduct: SKProduct?
     var weekProduct: SKProduct?
@@ -46,6 +49,9 @@ class PremiumViewController: UIViewController, StoryboardInstantiable {
     private func setupUI(){
         yearlyView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(yearlyAction)))
         weeklyView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(weeklyAction)))
+        
+        termButton.underline()
+        privacyButton.underline()
     }
     
     private func setupData(){
@@ -103,6 +109,21 @@ class PremiumViewController: UIViewController, StoryboardInstantiable {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func termAction(_ sender: Any) {
+        let vc = SFSafariViewController(url: URL(string: "https://proxpolicy.github.io/Watch_Face/terms_of_service")!)
+        self.present(vc, animated: true, completion: nil)
+        vc.delegate = self
+    }
     @IBAction func privacyAction(_ sender: Any) {
+        let vc = SFSafariViewController(url: URL(string: "https://proxpolicy.github.io/Watch_Face/privacy")!)
+        self.present(vc, animated: true, completion: nil)
+        vc.delegate = self
+    }
+}
+
+
+extension PremiumViewController: SFSafariViewControllerDelegate{
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
+        controller.dismiss(animated: true, completion: nil)
     }
 }

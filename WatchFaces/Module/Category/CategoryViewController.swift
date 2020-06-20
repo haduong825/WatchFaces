@@ -31,11 +31,12 @@ class CategoryViewController: UIViewController, StoryboardInstantiable {
         self.listView.addSubview(listWatchView)
         UIApplication.shared.statusBarUIView?.backgroundColor = .black
         
+        fetchCategories()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        fetchCategories()
+        
     }
     
     private func fetchCategories(){
