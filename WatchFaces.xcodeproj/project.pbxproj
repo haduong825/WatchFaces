@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A25BC8D258DEE240045CC28 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A25BC8C258DEE240045CC28 /* GoogleService-Info.plist */; };
 		9A2AAAEF247A0455003951DC /* StickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2AAAEE247A0455003951DC /* StickerView.swift */; };
 		9A2AAAF3247A301B003951DC /* ExportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2AAAF2247A301B003951DC /* ExportViewController.swift */; };
 		9A2AAB16247A5007003951DC /* SPAlertPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2AAAF6247A5007003951DC /* SPAlertPreset.swift */; };
@@ -95,6 +96,8 @@
 		9AD27CE0247987A50027C315 /* StickerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AD27CDE247987A50027C315 /* StickerCollectionViewCell.xib */; };
 		9AEECB01247D79A600E5A254 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AEECB00247D79A600E5A254 /* StoreKit.framework */; };
 		9AEECB03247D879700E5A254 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AEECB02247D879700E5A254 /* IAPHelper.swift */; };
+		9AFA6BA5258E047400F84651 /* ADService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFA6BA3258E047400F84651 /* ADService.swift */; };
+		9AFA6BA6258E047400F84651 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFA6BA4258E047400F84651 /* Configuration.swift */; };
 		C45A7E8EAC4318726C557C23 /* Pods_WatchFaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 810E1C32C28E1CA66AFDF920 /* Pods_WatchFaces.framework */; };
 /* End PBXBuildFile section */
 
@@ -102,6 +105,7 @@
 		26F36CD2E18E3FCFA5475318 /* Pods-WatchFaces.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchFaces.release.xcconfig"; path = "Target Support Files/Pods-WatchFaces/Pods-WatchFaces.release.xcconfig"; sourceTree = "<group>"; };
 		5E111E5302CE034CF7C9ABDC /* Pods-WatchFaces.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchFaces.debug.xcconfig"; path = "Target Support Files/Pods-WatchFaces/Pods-WatchFaces.debug.xcconfig"; sourceTree = "<group>"; };
 		810E1C32C28E1CA66AFDF920 /* Pods_WatchFaces.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WatchFaces.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A25BC8C258DEE240045CC28 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9A2AAAEE247A0455003951DC /* StickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerView.swift; sourceTree = "<group>"; };
 		9A2AAAF2247A301B003951DC /* ExportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportViewController.swift; sourceTree = "<group>"; };
 		9A2AAAF6247A5007003951DC /* SPAlertPreset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPAlertPreset.swift; sourceTree = "<group>"; };
@@ -193,6 +197,8 @@
 		9AD27CDE247987A50027C315 /* StickerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StickerCollectionViewCell.xib; sourceTree = "<group>"; };
 		9AEECB00247D79A600E5A254 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		9AEECB02247D879700E5A254 /* IAPHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
+		9AFA6BA3258E047400F84651 /* ADService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ADService.swift; sourceTree = "<group>"; };
+		9AFA6BA4258E047400F84651 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -332,6 +338,7 @@
 		9A73F717246AAB0C00E73966 /* WatchFaces */ = {
 			isa = PBXGroup;
 			children = (
+				9AFA6BA2258E046400F84651 /* Helpers */,
 				9A73BB722473FEF400FFF8AC /* Library */,
 				9A2AAAEE247A0455003951DC /* StickerView.swift */,
 				9AC395432472A09E0010CE65 /* LoadingOverlay.swift */,
@@ -343,6 +350,7 @@
 				9A73F721246AAB0E00E73966 /* Assets.xcassets */,
 				9A73F723246AAB0E00E73966 /* LaunchScreen.storyboard */,
 				9A73F726246AAB0E00E73966 /* Info.plist */,
+				9A25BC8C258DEE240045CC28 /* GoogleService-Info.plist */,
 			);
 			path = WatchFaces;
 			sourceTree = "<group>";
@@ -475,6 +483,15 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		9AFA6BA2258E046400F84651 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9AFA6BA3258E047400F84651 /* ADService.swift */,
+				9AFA6BA4258E047400F84651 /* Configuration.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		F6C2C5BC0E356B6FB02C13FB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -492,10 +509,12 @@
 			buildConfigurationList = 9A73F729246AAB0E00E73966 /* Build configuration list for PBXNativeTarget "WatchFaces" */;
 			buildPhases = (
 				6DFA04BF00687C17DAE41AFE /* [CP] Check Pods Manifest.lock */,
+				BB9E7CBC8DF50C83F551D4F9 /* [CP] Prepare Artifacts */,
 				9A73F711246AAB0C00E73966 /* Sources */,
 				9A73F712246AAB0C00E73966 /* Frameworks */,
 				9A73F713246AAB0C00E73966 /* Resources */,
 				010857759E3E726780D4D2C0 /* [CP] Embed Pods Frameworks */,
+				9A25BC8A258DED480045CC28 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -553,6 +572,7 @@
 				9A73F722246AAB0E00E73966 /* Assets.xcassets in Resources */,
 				9A8DFFF72478D88000A0364C /* BlurView.xib in Resources */,
 				9AC39530246DB7410010CE65 /* UnderTopView.xib in Resources */,
+				9A25BC8D258DEE240045CC28 /* GoogleService-Info.plist in Resources */,
 				9A73F720246AAB0C00E73966 /* Main.storyboard in Resources */,
 				9A73F741246C396900E73966 /* Setting.storyboard in Resources */,
 				9AD27CDC24794D540027C315 /* ListStickerView.xib in Resources */,
@@ -604,6 +624,40 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		9A25BC8A258DED480045CC28 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
+		};
+		BB9E7CBC8DF50C83F551D4F9 /* [CP] Prepare Artifacts */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WatchFaces/Pods-WatchFaces-artifacts-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Prepare Artifacts";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WatchFaces/Pods-WatchFaces-artifacts-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WatchFaces/Pods-WatchFaces-artifacts.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -620,6 +674,7 @@
 				9A2AAAF3247A301B003951DC /* ExportViewController.swift in Sources */,
 				9A73BB842473FF1000FFF8AC /* FSPagerViewObjcCompat.m in Sources */,
 				9A2AAB23247A5007003951DC /* SPAlertIconLikeView.swift in Sources */,
+				9AFA6BA5258E047400F84651 /* ADService.swift in Sources */,
 				9A9296D2246C58D000C410BB /* WatchCell.swift in Sources */,
 				9A2AAB17247A5007003951DC /* SPAlertHaptic.swift in Sources */,
 				9A8DFFF52478D87100A0364C /* BlurView.swift in Sources */,
@@ -630,6 +685,7 @@
 				9A9296C6246C49E800C410BB /* CGPoint+Distance.swift in Sources */,
 				9A2AAB29247A5007003951DC /* SPAlertIconBookmarkView.swift in Sources */,
 				9AC3953B24727DA20010CE65 /* CategoryModel.swift in Sources */,
+				9AFA6BA6258E047400F84651 /* Configuration.swift in Sources */,
 				9AC3952D246DAC320010CE65 /* WallpaperCollectionViewCell.swift in Sources */,
 				9A2AAB2F247A5007003951DC /* SPAlertIconDoneView.swift in Sources */,
 				9A2AAB19247A5007003951DC /* SPAlertIconAnimatable.swift in Sources */,
@@ -829,7 +885,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 100;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 374Z27ML26;
 				INFOPLIST_FILE = WatchFaces/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -837,6 +893,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.prox.watchWallpaper;
 				PRODUCT_NAME = "Watch Face";
 				PROVISIONING_PROFILE_SPECIFIER = "Watch wallpaper Store";
@@ -852,7 +909,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 100;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 374Z27ML26;
 				INFOPLIST_FILE = WatchFaces/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -860,6 +917,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.prox.watchWallpaper;
 				PRODUCT_NAME = "Watch Face";
 				PROVISIONING_PROFILE_SPECIFIER = "Watch wallpaper Store";

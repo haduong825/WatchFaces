@@ -9,5 +9,7 @@ target 'WatchFaces' do
   pod 'SDWebImage', '~> 5.0'
   pod 'RealmSwift'
   pod 'SPAlert'
-
+  pod 'Firebase/Crashlytics'
+  pod 'Firebase/Analytics'
+  pod 'Google-Mobile-Ads-SDK'
 end
